@@ -726,6 +726,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 1.3999634
       objectReference: {fileID: 0}
+    - target: {fileID: 6645969991534499064, guid: 0e45dca967512d3438dc4447f195ab33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8985148598109765540, guid: 0e45dca967512d3438dc4447f195ab33, type: 3}
       propertyPath: m_text
       value: "Recherche de poste en CDD ou int\xE9rim"

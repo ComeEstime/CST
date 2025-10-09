@@ -26,6 +26,7 @@ namespace CardRH
         [Header("Deck Builder")]
         public CardsDB CardViewDeck;
         private List<CardSO> _cardDeck = new List<CardSO>();
+        public List<CardSO> CardDeck { get => _cardDeck; }
 
         [FormerlySerializedAs("_allCandidates")]
         [Header("Candidate")] 
@@ -56,7 +57,7 @@ namespace CardRH
             Debug.Log("OK c'est bon on passe à la suite");
             
             _canvasDeckBuild.gameObject.SetActive(false);
-            _canvasCandidate.gameObject.SetActive(true);
+            _canvasPlaceChoose.gameObject.SetActive(true);
             DisplayTime();
             CurrentPhase = GamePhase.ChoosePlace;
             ChangeCandidate();

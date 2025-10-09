@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace CardRH
 {
@@ -13,6 +14,7 @@ namespace CardRH
         public Sprite Border;
         public Sprite Art;
         public bool InDeck;
+        public bool IsGolden;
         public List<CardTrait> Traits = new List<CardTrait>();
         public List<PlaceType> Place = new List<PlaceType>();
 
@@ -26,9 +28,9 @@ namespace CardRH
             clone.Border = Border;
             clone.Art = Art;
             clone.InDeck = InDeck;
+            clone.IsGolden = IsGolden;
             clone.Traits = new List<CardTrait>(Traits);
             return clone;
-
         }
     }
 }
