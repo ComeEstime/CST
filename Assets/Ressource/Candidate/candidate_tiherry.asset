@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_tiherry
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Thierry
+  Art: {fileID: 6781809130611907211, guid: d0553794f4dcfbd4e81c13e3ff6b269f, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: d52a9d41383745547bdffffdcc9e89de, type: 2}
+  - {fileID: 11400000, guid: 6bad632a0ed4f0048b8b87184272af21, type: 2}
+  - {fileID: 11400000, guid: a89966d529dee9a4cb65e3cc1b5db32e, type: 2}
+  - {fileID: 11400000, guid: f7326c58d19545a4180f16f4cdb6d34c, type: 2}
+  - {fileID: 11400000, guid: 72c65e9d64899814799d887d86a49b76, type: 2}
+  CandidatePlace: 0000000001000000
+  HaveBeenSee: 0
