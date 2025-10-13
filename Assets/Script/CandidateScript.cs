@@ -24,7 +24,6 @@ public class CandidateScript : MonoBehaviour
     {
         if (_currentCandidate != null)
         {
-            _currentCandidate.HaveBeenSee = true;
             return SaveCandidate();
         }
         return null;

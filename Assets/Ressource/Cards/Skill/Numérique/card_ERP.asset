@@ -19,6 +19,7 @@ MonoBehaviour:
   Type: 0
   Border: {fileID: 21300000, guid: 7fed6d71d7ac41a42aed3cd6ccfc4cb3, type: 3}
   Art: {fileID: 21300000, guid: 2fafc90aebeff8f49ab89f5a7fa7f007, type: 3}
-  IsTargeting: 0
+  InDeck: 0
+  IsGolden: 0
   Traits: []
   Place: 

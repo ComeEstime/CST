@@ -25,11 +25,11 @@ public class DeckCandidate : MonoBehaviour
 
                 instance.cardData = c.CreateClone();
                             
-                foreach (var gmc in GameManager.Instance.CardDeck)
+                foreach (var gameModeCard in GameManager.Instance.CardDeck)
                 {
-                    if (gmc.Description == c.Description)
+                    if (gameModeCard.Description == c.Description)
                     {
-                        c.IsGolden = true;
+                        instance.cardData.IsGolden = true;
                     }
                 }
                 _deckCard.Add(instance.cardData);

@@ -12,6 +12,7 @@ namespace CardRH
         DeckBuild = 0,
         FindCandidat = 1,
         ChoosePlace = 2,
+        ChooseCandidate = 3
     }
     public class GameManager : MonoBehaviour
     {
@@ -22,18 +23,20 @@ namespace CardRH
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
         [SerializeField] private Canvas _canvasCandidate;
+        [SerializeField] private Canvas _canvasDeskop;
         
         [Header("Deck Builder")]
         public CardsDB CardViewDeck;
         private List<CardSO> _cardDeck = new List<CardSO>();
         public List<CardSO> CardDeck { get => _cardDeck; }
 
-        [FormerlySerializedAs("_allCandidates")]
         [Header("Candidate")] 
         [SerializeField] private List<CandidateSO> _candidateList;
-        [FormerlySerializedAs("_candidate")] [SerializeField] private CandidateScript _candidateScript;
-        private int _candidateCount = 0;
+        public List<CandidateSO> CandidateList { get => _candidateList; }
+        [SerializeField] private CandidateScript _candidateScript;
+        [SerializeField] private CandidateDisplayScript _candidateDisplayScript;
         private PlaceType _currentPlace = PlaceType.None;
+        
         
         
         [Header("Time")]
@@ -65,6 +68,15 @@ namespace CardRH
 
         public void EnterPlace(PlaceType newPlace)
         {
+            if (newPlace == PlaceType.Office)
+            {
+                _canvasPlaceChoose.gameObject.SetActive(false);
+                _canvasDeskop.gameObject.SetActive(true);
+                
+                _candidateDisplayScript.DisplayCandidate();
+                return;
+            }
+            
             _canvasPlaceChoose.gameObject.SetActive(false);
             _canvasCandidate.gameObject.SetActive(true);
             CurrentPhase = GamePhase.FindCandidat;
@@ -130,6 +142,14 @@ namespace CardRH
             {
                 if (_candidateList[i].Name == toSave.Name)
                 {
+                    foreach (var card in toSave.CandidateDeck)
+                    {
+                        if (card.IsGolden && card.InDeck)
+                        {
+                            toSave.NumberCardInCommun++;
+                        }
+                    }
+                    toSave.HaveBeenSee = true;
                     _candidateList[i] = toSave;
                     return;
                 }

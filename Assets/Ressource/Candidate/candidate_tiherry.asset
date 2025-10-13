@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72c65e9d64899814799d887d86a49b76, type: 2}
   CandidatePlace: 0000000001000000
   HaveBeenSee: 0
+  NumberCardInCommun: 0

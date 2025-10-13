@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CardRH;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "CandidateSO", menuName = "Scriptable Objects/CandidateSO")]
 public class CandidateSO : ScriptableObject
@@ -10,6 +11,7 @@ public class CandidateSO : ScriptableObject
     public List<CardSO> CandidateDeck = new List<CardSO>();
     public List<PlaceType> CandidatePlace = new List<PlaceType>();
     public bool HaveBeenSee = false;
+    [FormerlySerializedAs("NumberCardInDeck")] public int NumberCardInCommun = 0;
     
     public CandidateSO CreateClone()
     {
@@ -19,6 +21,7 @@ public class CandidateSO : ScriptableObject
         clone.CandidateDeck = new List<CardSO>(CandidateDeck);
         clone.CandidatePlace = new List<PlaceType>(CandidatePlace);
         clone.HaveBeenSee = HaveBeenSee;
+        clone.NumberCardInCommun = NumberCardInCommun;
         return clone;
     }
 }

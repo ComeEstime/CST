@@ -4,14 +4,14 @@ namespace CardRH
     {
         Skill = 0,
         SoftSkill = 1,
-        Context = 2,
+        Context = 2
     }
     
     public enum TraitType
     {
         Consume = 0,
         Destroy = 1,
-        Persist = 2,
+        Persist = 2
     }
 
     public enum PlaceType
@@ -22,6 +22,7 @@ namespace CardRH
         SocialNetwork = 3,
         Alternative = 4,
         Cv = 5,
-        None = 6,
+        Office = 6,
+        None = 7
     }
 }
