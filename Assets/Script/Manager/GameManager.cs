@@ -127,7 +127,8 @@ namespace CardRH
                 {
                     if (cp == _currentPlace & !c.HaveBeenSee)
                     {
-                        Instantiate(_meetCandidate, _meetDeck.transform);
+                        MeetCandidateScript candidateMeet = Instantiate(_meetCandidate, _meetDeck.transform);
+                        candidateMeet.Candidate = c;
                         break;
                     }
                 }

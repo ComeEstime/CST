@@ -24,8 +24,13 @@ namespace CardRH
         public UnityEvent OnClick;
 
         private CandidateSO _candidate;
-        //[Header("Information")]
-        //[SerializeField] private 
+        public CandidateSO Candidate
+        {
+            get { return _candidate; }
+            set { _candidate = value; }
+        }
+        [Header("Description")] 
+        [SerializeField] private CardInfoScript _cardInfo;
         
         private Vector3 baseScale;
         private Coroutine anim;
