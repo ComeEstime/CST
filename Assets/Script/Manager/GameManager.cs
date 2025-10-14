@@ -10,9 +10,10 @@ namespace CardRH
     public enum GamePhase
     {
         DeckBuild = 0,
-        FindCandidat = 1,
-        ChoosePlace = 2,
-        ChooseCandidate = 3
+        ChoosePlace = 1,
+        MeetCandidate = 2,
+        FindCandidat = 3,
+        ChooseCandidate = 4
     }
     public class GameManager : MonoBehaviour
     {
@@ -22,6 +23,7 @@ namespace CardRH
         [Header("Canvas")]
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
+        [SerializeField] private Canvas _canvasMeetCandidate;
         [SerializeField] private Canvas _canvasCandidate;
         [SerializeField] private Canvas _canvasDeskop;
         
@@ -58,11 +60,10 @@ namespace CardRH
                 _cardDeck.Add(CardViewDeck.CardChoose[i].cardData);
             }
             Debug.Log("OK c'est bon on passe à la suite");
+
+            ChangeCanvas(GamePhase.ChoosePlace);
             
-            _canvasDeckBuild.gameObject.SetActive(false);
-            _canvasPlaceChoose.gameObject.SetActive(true);
             DisplayTime();
-            CurrentPhase = GamePhase.ChoosePlace;
             ChangeCandidate();
         }
 
@@ -70,16 +71,13 @@ namespace CardRH
         {
             if (newPlace == PlaceType.Office)
             {
-                _canvasPlaceChoose.gameObject.SetActive(false);
-                _canvasDeskop.gameObject.SetActive(true);
+                ChangeCanvas(GamePhase.ChooseCandidate);
                 
                 _candidateDisplayScript.DisplayCandidate();
                 return;
             }
             
-            _canvasPlaceChoose.gameObject.SetActive(false);
-            _canvasCandidate.gameObject.SetActive(true);
-            CurrentPhase = GamePhase.FindCandidat;
+            ChangeCanvas(GamePhase.MeetCandidate);
             
             _currentPlace = newPlace;
             ChangeCandidate();
@@ -89,16 +87,11 @@ namespace CardRH
         {
             //Finish and save the candidate
             CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
-            if (oldCandidate != null)
-            {
-                SaveCandidate(oldCandidate);
-            }
+            if (oldCandidate != null) SaveCandidate(oldCandidate);
             _candidateScript.SetCandidateNull();
             
             //Change Canvas
-            _canvasCandidate.gameObject.SetActive(false);
-            _canvasPlaceChoose.gameObject.SetActive(true);
-            CurrentPhase = GamePhase.ChoosePlace;
+            ChangeCanvas(GamePhase.ChoosePlace);
             
             _currentPlace = PlaceType.None;
         }
@@ -154,6 +147,59 @@ namespace CardRH
                     return;
                 }
             }
+        }
+
+        public void ChangeCanvas(GamePhase newPhase)
+        {
+            //Remove last canva
+            switch (CurrentPhase)
+            {
+                case GamePhase.DeckBuild :
+                    _canvasDeckBuild.gameObject.SetActive(false);
+                    break;
+                
+                case GamePhase.ChoosePlace :
+                    _canvasPlaceChoose.gameObject.SetActive(false);
+                    break;
+                
+                case GamePhase.MeetCandidate :
+                    _canvasMeetCandidate.gameObject.SetActive(false);
+                    break;
+                
+                case GamePhase.FindCandidat :
+                    _canvasCandidate.gameObject.SetActive(false);
+                    break;
+                
+                case GamePhase.ChooseCandidate :
+                    _canvasDeskop.gameObject.SetActive(false);
+                    break;
+            }
+            
+            //Display new Canva
+            switch (newPhase)
+            {
+                case GamePhase.DeckBuild :
+                    _canvasDeckBuild.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.ChoosePlace :
+                    _canvasPlaceChoose.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.MeetCandidate :
+                    _canvasMeetCandidate.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.FindCandidat :
+                    _canvasCandidate.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.ChooseCandidate :
+                    _canvasDeskop.gameObject.SetActive(true);
+                    break;
+            }
+
+            CurrentPhase = newPhase;
         }
         
         //Time gestion
