@@ -35,6 +35,8 @@ namespace CardRH
         [Header("Candidate")] 
         [SerializeField] private List<CandidateSO> _candidateList;
         public List<CandidateSO> CandidateList { get => _candidateList; }
+        [SerializeField] private MeetCandidateScript _meetCandidate;
+        [SerializeField] private GameObject _meetDeck;
         [SerializeField] private CandidateScript _candidateScript;
         [SerializeField] private CandidateDisplayScript _candidateDisplayScript;
         private PlaceType _currentPlace = PlaceType.None;
@@ -80,7 +82,8 @@ namespace CardRH
             ChangeCanvas(GamePhase.MeetCandidate);
             
             _currentPlace = newPlace;
-            ChangeCandidate();
+            DisplayMeetCandidate();
+            //ChangeCandidate();
         }
 
         public void LeavePlace()
@@ -95,8 +98,6 @@ namespace CardRH
             
             _currentPlace = PlaceType.None;
         }
-        
-        
         
         public void ChangeCandidate()
         {
@@ -113,6 +114,27 @@ namespace CardRH
             else Debug.Log("Tu n'a plus de candidat à voir dans ce lieu");
         }
 
+        public void DisplayMeetCandidate()
+        {
+            foreach (Transform child in _meetDeck.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            foreach (var c in _candidateList)
+            {
+                foreach (var cp in c.CandidatePlace)
+                {
+                    if (cp == _currentPlace & !c.HaveBeenSee)
+                    {
+                        Instantiate(_meetCandidate, _meetDeck.transform);
+                        break;
+                    }
+                }
+            }
+
+        }
+        
         public CandidateSO FindCandidate()
         {
             foreach (var c in _candidateList)

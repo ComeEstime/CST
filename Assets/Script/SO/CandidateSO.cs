@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class CandidateSO : ScriptableObject
 {
     public string Name = "CharacterName";
+    public string Description = "None";
     public Sprite Art;
     public List<CardSO> CandidateDeck = new List<CardSO>();
     public List<PlaceType> CandidatePlace = new List<PlaceType>();
@@ -17,6 +18,7 @@ public class CandidateSO : ScriptableObject
     {
         CandidateSO clone = ScriptableObject.CreateInstance<CandidateSO>();
         clone.Name = Name;
+        clone.Description = Description;
         clone.Art = Art;
         clone.CandidateDeck = new List<CardSO>(CandidateDeck);
         clone.CandidatePlace = new List<PlaceType>(CandidatePlace);

@@ -23,6 +23,7 @@ namespace CardRH
         [Header("Click")]
         public UnityEvent OnClick;
 
+        private CandidateSO _candidate;
         //[Header("Information")]
         //[SerializeField] private 
         
