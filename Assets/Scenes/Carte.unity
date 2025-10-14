@@ -7330,7 +7330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3371dc1d158ed5646b75a1814ba2116c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  CurrentPhase: 2
+  CurrentPhase: 0
   _canvasDeckBuild: {fileID: 574147481}
   _canvasPlaceChoose: {fileID: 43681410}
   _canvasMeetCandidate: {fileID: 1068495544}
