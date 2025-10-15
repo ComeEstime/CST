@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: candidate_mary
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Mary
+  Description: "Mary est une jeune femme tr\xE8s gentille mais elle \xE0 \xE9tait
+    harcel\xE9 par Herv\xE9"
   Art: {fileID: -5202084675088819995, guid: 110c14530d69f124795a56b36cbd8eb7, type: 3}
   CandidateDeck:
   - {fileID: 11400000, guid: 269188a8d11a9e341a0459453892aafb, type: 2}

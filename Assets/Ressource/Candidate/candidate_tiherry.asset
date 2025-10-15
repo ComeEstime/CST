@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: candidate_tiherry
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Thierry
+  Description: Juste un mec chill qui est est tranquille dans son coin
   Art: {fileID: 6781809130611907211, guid: d0553794f4dcfbd4e81c13e3ff6b269f, type: 3}
   CandidateDeck:
   - {fileID: 11400000, guid: d52a9d41383745547bdffffdcc9e89de, type: 2}

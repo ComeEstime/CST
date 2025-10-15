@@ -5,7 +5,8 @@ public class CardInfoScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _description;
 
-    public void DisplayInfo()
+    public void DisplayInfo(string _descText)
     {
+        _description.text = _descText;
     }
 }

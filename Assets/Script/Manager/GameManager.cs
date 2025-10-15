@@ -128,12 +128,11 @@ namespace CardRH
                     if (cp == _currentPlace & !c.HaveBeenSee)
                     {
                         MeetCandidateScript candidateMeet = Instantiate(_meetCandidate, _meetDeck.transform);
-                        candidateMeet.Candidate = c;
+                        candidateMeet.SetCandidate(c);
                         break;
                     }
                 }
             }
-
         }
         
         public CandidateSO FindCandidate()

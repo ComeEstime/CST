@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
   m_Name: candidate_herve
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
-  Name: Thiery
+  Name: "Herv\xE9"
+  Description: "Herv\xE9 est nu mec cool mais il a harcel\xE9 une de ces coll\xE8gue
+    et \xE7a c'est pas ouf"
   Art: {fileID: -795460828842769887, guid: 622078a6ffaa49542a5b9c5d179061e9, type: 3}
   CandidateDeck:
   - {fileID: 11400000, guid: be7205b498e5157418087105a05fe223, type: 2}

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace CardRH
 {
@@ -27,10 +28,13 @@ namespace CardRH
         public CandidateSO Candidate
         {
             get { return _candidate; }
-            set { _candidate = value; }
         }
+        
         [Header("Description")] 
         [SerializeField] private CardInfoScript _cardInfo;
+
+        private CardInfoScript _activeCard = null;
+        private Image _imageCandidate;
         
         private Vector3 baseScale;
         private Coroutine anim;
@@ -38,6 +42,7 @@ namespace CardRH
         private void Awake()
         {
             if (target == null) target = transform as RectTransform;
+            _imageCandidate = GetComponent<Image>();
         }
 
         private void Start()
@@ -69,9 +74,27 @@ namespace CardRH
             anim = null;
         }
 
+        public void SetCandidate(CandidateSO newCandidate)
+        {
+            _candidate = newCandidate;
+            _imageCandidate.sprite = _candidate.Art;
+
+        }
+        
         public void Click()
         {
-            
+            _activeCard = Instantiate(_cardInfo, GameObject.Find("CanvasMeetCandidate").transform);
+            _activeCard.DisplayInfo(_candidate.Description);
+        }
+
+        private void OnDisable()
+        {
+            if (_activeCard) Destroy(_activeCard.gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            if (_activeCard) Destroy(_activeCard.gameObject);
         }
     }
 }
