@@ -33,7 +33,7 @@ namespace CardRH
         [Header("Description")] 
         [SerializeField] private CardInfoScript _cardInfo;
 
-        private CardInfoScript _activeCard = null;
+        //private CardInfoScript _activeCard = null;
         private Image _imageCandidate;
         
         private Vector3 baseScale;
@@ -83,11 +83,11 @@ namespace CardRH
         
         public void Click()
         {
-            _activeCard = Instantiate(_cardInfo, GameObject.Find("CanvasMeetCandidate").transform);
-            _activeCard.DisplayInfo(_candidate.Description);
+            CardInfoScript activeCard = Instantiate(_cardInfo, GameObject.Find("CanvasMeetCandidate").transform);
+            activeCard.DisplayInfo(_candidate.Description);
         }
 
-        private void OnDisable()
+        /*private void OnDisable()
         {
             if (_activeCard) Destroy(_activeCard.gameObject);
         }
@@ -95,6 +95,6 @@ namespace CardRH
         private void OnDestroy()
         {
             if (_activeCard) Destroy(_activeCard.gameObject);
-        }
+        }*/
     }
 }

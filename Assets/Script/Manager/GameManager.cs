@@ -26,6 +26,8 @@ namespace CardRH
         [SerializeField] private Canvas _canvasMeetCandidate;
         [SerializeField] private Canvas _canvasCandidate;
         [SerializeField] private Canvas _canvasDeskop;
+        [SerializeField] private MainHUD _HUDGame;
+        
         
         [Header("Deck Builder")]
         public CardsDB CardViewDeck;
@@ -64,6 +66,10 @@ namespace CardRH
             Debug.Log("OK c'est bon on passe à la suite");
 
             ChangeCanvas(GamePhase.ChoosePlace);
+            
+            //Active HUD
+            _HUDGame.gameObject.SetActive(true);
+            _HUDGame.SetCard(_cardDeck);
             
             DisplayTime();
             ChangeCandidate();
