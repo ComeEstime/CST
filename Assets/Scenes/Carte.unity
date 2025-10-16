@@ -7288,7 +7288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2315289584108803517, guid: 7df21ed80c157db44aabb87f3bd99bd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeCandidate
+      value: StayPlace
       objectReference: {fileID: 0}
     - target: {fileID: 2315289584108803517, guid: 7df21ed80c157db44aabb87f3bd99bd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
