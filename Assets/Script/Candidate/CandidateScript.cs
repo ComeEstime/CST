@@ -14,7 +14,6 @@ public class CandidateScript : MonoBehaviour
 
     public void ChangeCandidate(CandidateSO newCandidate)
     {
-        _currentCandidate = newCandidate;
         ClearDeck();
         _currentCandidate = newCandidate;
         _deckScript.InitDeck(_currentCandidate.CandidateDeck);

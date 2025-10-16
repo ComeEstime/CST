@@ -1,3 +1,4 @@
+using CardRH;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +19,12 @@ public class CardInfoScript : MonoBehaviour
         DisplayInfo(_candidateInfo.Description);
     }
 
+    public void ValidCandidate()
+    {
+        if(_candidateInfo != null) GameManager.Instance.SeeCandidate(_candidateInfo);
+        Destroy(gameObject);
+    }
+    
     public void DestroyInfo()
     {
         Destroy(gameObject);

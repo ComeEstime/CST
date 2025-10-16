@@ -12,7 +12,7 @@ namespace CardRH
         DeckBuild = 0,
         ChoosePlace = 1,
         MeetCandidate = 2,
-        FindCandidat = 3,
+        DiscoverCandidate = 3,
         ChooseCandidate = 4
     }
     public class GameManager : MonoBehaviour
@@ -43,8 +43,6 @@ namespace CardRH
         [SerializeField] private CandidateDisplayScript _candidateDisplayScript;
         private PlaceType _currentPlace = PlaceType.None;
         
-        
-        
         [Header("Time")]
         [SerializeField] private int _timeRessource = 25;
         [SerializeField] private TextMeshProUGUI  _textTime;
@@ -72,7 +70,7 @@ namespace CardRH
             _HUDGame.SetCard(_cardDeck);
             
             DisplayTime();
-            ChangeCandidate();
+            //ChangeCandidate();
         }
 
         public void EnterPlace(PlaceType newPlace)
@@ -92,6 +90,16 @@ namespace CardRH
             //ChangeCandidate();
         }
 
+        public void StayPlace()
+        {
+            //Finish and save the candidate
+            CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
+            if (oldCandidate != null) SaveCandidate(oldCandidate);
+            _candidateScript.SetCandidateNull();
+            
+            EnterPlace(_currentPlace);
+        }
+
         public void LeavePlace()
         {
             //Finish and save the candidate
@@ -105,21 +113,19 @@ namespace CardRH
             _currentPlace = PlaceType.None;
         }
         
+        /*
         public void ChangeCandidate()
         {
             //Save le candidate qui vient d'être jouer
-            CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
-            if (oldCandidate != null)
-            {
-                SaveCandidate(oldCandidate);
-            }
+
             
             //Trouver un nouveau candidat
             CandidateSO tempCandidate = FindCandidate();
             if(tempCandidate != null) _candidateScript.ChangeCandidate(tempCandidate.CreateClone());
             else Debug.Log("Tu n'a plus de candidat à voir dans ce lieu");
         }
-
+        */
+        
         public void DisplayMeetCandidate()
         {
             foreach (Transform child in _meetDeck.transform)
@@ -140,7 +146,13 @@ namespace CardRH
                 }
             }
         }
-        
+
+        public void SeeCandidate(CandidateSO tempCandidate)
+        {
+            ChangeCanvas(GamePhase.DiscoverCandidate);
+            _candidateScript.ChangeCandidate(tempCandidate.CreateClone());
+        }
+            
         public CandidateSO FindCandidate()
         {
             foreach (var c in _candidateList)
@@ -194,7 +206,7 @@ namespace CardRH
                     _canvasMeetCandidate.gameObject.SetActive(false);
                     break;
                 
-                case GamePhase.FindCandidat :
+                case GamePhase.DiscoverCandidate :
                     _canvasCandidate.gameObject.SetActive(false);
                     break;
                 
@@ -218,7 +230,7 @@ namespace CardRH
                     _canvasMeetCandidate.gameObject.SetActive(true);
                     break;
                 
-                case GamePhase.FindCandidat :
+                case GamePhase.DiscoverCandidate :
                     _canvasCandidate.gameObject.SetActive(true);
                     break;
                 

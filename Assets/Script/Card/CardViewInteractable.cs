@@ -68,7 +68,7 @@ namespace CardRH
                 if(c.cardData.InDeck) gm.CardViewDeck.RemoveCard(c);
                 else gm.CardViewDeck.AddCard(c);
             }
-            else if (gm.CurrentPhase == GamePhase.FindCandidat &
+            else if (gm.CurrentPhase == GamePhase.DiscoverCandidate &
                      TryGetComponent<CardView>(out CardView v) & !v.cardData.InDeck)
             {
                 v.cardData.InDeck = true;

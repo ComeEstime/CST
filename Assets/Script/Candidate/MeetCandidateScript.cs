@@ -84,7 +84,7 @@ namespace CardRH
         public void Click()
         {
             CardInfoScript activeCard = Instantiate(_cardInfo, GameObject.Find("CanvasMeetCandidate").transform);
-            activeCard.DisplayInfo(_candidate.Description);
+            activeCard.SetInfo(_candidate);
         }
 
         /*private void OnDisable()
