@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
 
 namespace CardRH
@@ -10,10 +11,11 @@ namespace CardRH
         [SerializeField] private List<CardView> _cardDeck;
         public List<CardView> CardChoose { get =>_cardDeck; }
 
-        [Header("Slider")]
+        [Header("UI Elem")]
         [SerializeField] private GameObject _listSkill;
         [SerializeField] private GameObject _listSoftSkill;
         [SerializeField] private GameObject _listContext;
+        [SerializeField] private TextMeshProUGUI _textMesh;
 
         private CardType _deckPhase = CardType.Skill;
         public void AddCard(CardView newCard)
@@ -83,6 +85,7 @@ namespace CardRH
             if (temp >= 0)
             {
                 oldCard.cardData.Description = null;
+                oldCard.cardData.Type = CardType.Empty;
                 _cardDeck[temp].gameObject.SetActive(false);
             }
         }
@@ -103,6 +106,11 @@ namespace CardRH
                     if (_cardDeck[0].cardData.Type == CardType.Empty) return;
                     _listSkill.SetActive(false);
                     _listSoftSkill.SetActive(true);
+                    GameObject skillParent = _cardDeck[0].transform.parent.gameObject;
+                    skillParent.SetActive(false);
+                    GameObject softParent = _cardDeck[1].transform.parent.gameObject;
+                    softParent.SetActive(true);
+                    _textMesh.text = "Choisie le savoir être que tu recherhce";
                     _deckPhase = CardType.SoftSkill;
                     break;
             
@@ -110,6 +118,15 @@ namespace CardRH
                     if (_cardDeck[1].cardData.Type == CardType.Empty) return;
                     _listSoftSkill.SetActive(false);
                     _listContext.SetActive(true);
+                    GameObject softParent1 = _cardDeck[1].transform.parent.gameObject;
+                    softParent1.SetActive(false);
+                    GameObject contextParent = _cardDeck[2].transform.parent.gameObject;
+                    contextParent.SetActive(true);
+                    GameObject contextParent1 = _cardDeck[3].transform.parent.gameObject;
+                    contextParent1.SetActive(true);
+                    GameObject contextParent2 = _cardDeck[4].transform.parent.gameObject;
+                    contextParent2.SetActive(true);
+                    _textMesh.text = "Choisie les contexte de job que tu recherhce";
                     _deckPhase = CardType.Context;
                     break;
             

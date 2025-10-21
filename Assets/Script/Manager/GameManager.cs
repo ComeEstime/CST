@@ -10,6 +10,7 @@ namespace CardRH
 {
     public enum GamePhase
     {
+        Intro = -1,
         DeckBuild = 0,
         ChoosePlace = 1,
         MeetCandidate = 2,
