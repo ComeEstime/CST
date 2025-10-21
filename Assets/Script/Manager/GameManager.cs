@@ -4,6 +4,7 @@ using NUnit.Framework.Constraints;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace CardRH
 {
@@ -28,6 +29,11 @@ namespace CardRH
         [SerializeField] private Canvas _canvasDeskop;
         [SerializeField] private MainHUD _HUDGame;
         
+        [Header("Sprite")]
+        [SerializeField] private Sprite _imageSchool;
+        [SerializeField] private Sprite _imageCooptation;
+        [SerializeField] private Sprite _imageHall;
+        [SerializeField] private List<Image> _background;
         
         [Header("Deck Builder")]
         public CardsDB CardViewDeck;
@@ -70,7 +76,6 @@ namespace CardRH
             _HUDGame.SetCard(_cardDeck);
             
             DisplayTime();
-            //ChangeCandidate();
         }
 
         public void EnterPlace(PlaceType newPlace)
@@ -83,11 +88,10 @@ namespace CardRH
                 return;
             }
             
-            ChangeCanvas(GamePhase.MeetCandidate);
-            
             _currentPlace = newPlace;
+            
+            ChangeCanvas(GamePhase.MeetCandidate);
             DisplayMeetCandidate();
-            //ChangeCandidate();
         }
 
         public void StayPlace()
@@ -112,19 +116,6 @@ namespace CardRH
             
             _currentPlace = PlaceType.None;
         }
-        
-        /*
-        public void ChangeCandidate()
-        {
-            //Save le candidate qui vient d'être jouer
-
-            
-            //Trouver un nouveau candidat
-            CandidateSO tempCandidate = FindCandidate();
-            if(tempCandidate != null) _candidateScript.ChangeCandidate(tempCandidate.CreateClone());
-            else Debug.Log("Tu n'a plus de candidat à voir dans ce lieu");
-        }
-        */
         
         public void DisplayMeetCandidate()
         {
@@ -228,6 +219,7 @@ namespace CardRH
                 
                 case GamePhase.MeetCandidate :
                     _canvasMeetCandidate.gameObject.SetActive(true);
+                    ChangeBackground();
                     break;
                 
                 case GamePhase.DiscoverCandidate :
@@ -240,6 +232,34 @@ namespace CardRH
             }
 
             CurrentPhase = newPhase;
+        }
+
+        public void ChangeBackground()
+        {
+            switch (_currentPlace)
+            {
+                case PlaceType.School :
+                    foreach (Image bg in _background)
+                    {
+                        bg.sprite = _imageSchool;
+                    }
+                    break;
+                
+                case PlaceType.Cooptation :
+                    foreach (Image bg in _background)
+                    {
+                        bg.sprite = _imageCooptation;
+                    }
+                    break;
+                
+                case PlaceType.Hall :
+                    foreach (Image bg in _background)
+                    {
+                        bg.sprite = _imageHall;
+                    }
+                    break;
+                    
+            }
         }
         
         //Time gestion
