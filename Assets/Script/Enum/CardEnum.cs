@@ -4,7 +4,8 @@ namespace CardRH
     {
         Skill = 0,
         SoftSkill = 1,
-        Context = 2
+        Context = 2,
+        Empty = 3,
     }
     
     public enum TraitType

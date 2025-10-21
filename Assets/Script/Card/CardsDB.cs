@@ -10,6 +10,12 @@ namespace CardRH
         [SerializeField] private List<CardView> _cardDeck;
         public List<CardView> CardChoose { get =>_cardDeck; }
 
+        [Header("Slider")]
+        [SerializeField] private GameObject _listSkill;
+        [SerializeField] private GameObject _listSoftSkill;
+        [SerializeField] private GameObject _listContext;
+
+        private CardType _deckPhase = CardType.Skill;
         public void AddCard(CardView newCard)
         {
             switch (newCard.cardData.Type)
@@ -63,6 +69,7 @@ namespace CardRH
 
         public void RemoveCard(CardView oldCard)
         {
+            if (oldCard.cardData.Type != _deckPhase) return;
             int temp = -1 ;
             for(int i = 0; i < _cardDeck.Count; i++)
             {
@@ -85,6 +92,36 @@ namespace CardRH
             foreach (CardView view in _cardDeck)
             {
                 view.UpdateCardUI();
+            }
+        }
+        
+        public void ChangePhase()
+        {
+            switch (_deckPhase)
+            {
+                case CardType.Skill :
+                    if (_cardDeck[0].cardData.Type == CardType.Empty) return;
+                    _listSkill.SetActive(false);
+                    _listSoftSkill.SetActive(true);
+                    _deckPhase = CardType.SoftSkill;
+                    break;
+            
+                case CardType.SoftSkill :
+                    if (_cardDeck[1].cardData.Type == CardType.Empty) return;
+                    _listSoftSkill.SetActive(false);
+                    _listContext.SetActive(true);
+                    _deckPhase = CardType.Context;
+                    break;
+            
+                case CardType.Context :
+                    if (_cardDeck[2].cardData.Type == CardType.Empty
+                        || _cardDeck[3].cardData.Type == CardType.Empty
+                        || _cardDeck[4].cardData.Type == CardType.Empty) return;
+                    _listContext.SetActive(false);
+                    break;
+            
+                default:
+                    break;
             }
         }
     }
