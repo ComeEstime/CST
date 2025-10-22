@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using NUnit.Framework;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 namespace CardRH
 {
@@ -15,7 +14,13 @@ namespace CardRH
         [SerializeField] private GameObject _listSkill;
         [SerializeField] private GameObject _listSoftSkill;
         [SerializeField] private GameObject _listContext;
+        [SerializeField] private GameObject  _finalDeck;
         [SerializeField] private TextMeshProUGUI _textMesh;
+        
+        [Header("Button")]
+        [SerializeField] private Button _buttonStart;
+        [SerializeField] private Button _buttonRefoundDeck;
+        [SerializeField] private Button _nextChoice;
 
         private CardType _deckPhase = CardType.Skill;
         public void AddCard(CardView newCard)
@@ -97,11 +102,48 @@ namespace CardRH
                 view.UpdateCardUI();
             }
         }
+
+        public void DisplayFinalDeck()
+        {
+            foreach (var card in _cardDeck)
+            {
+                card.transform.parent.SetParent(_finalDeck.transform);
+                card.transform.parent.gameObject.SetActive(true);
+            }
+            _finalDeck.SetActive(true);
+            
+            _buttonStart.gameObject.SetActive(true);
+            _buttonRefoundDeck.gameObject.SetActive(true);
+            _nextChoice.gameObject.SetActive(false);
+        }
+
+        public void RefoundDeck()
+        {
+            foreach (var card in _cardDeck)
+            {
+                card.transform.parent.SetParent(transform);
+                card.transform.parent.gameObject.SetActive(false);
+            }
+            
+            _buttonStart.gameObject.SetActive(false);
+            _buttonRefoundDeck.gameObject.SetActive(false);
+            _nextChoice.gameObject.SetActive(true);
+            
+            ChangePhase();
+        }
         
         public void ChangePhase()
         {
             switch (_deckPhase)
             {
+                case CardType.Empty :
+                    _listSkill.SetActive(true);
+                    GameObject firstParent = _cardDeck[0].transform.parent.gameObject;
+                    firstParent.SetActive(true);
+                    _deckPhase = CardType.Skill;
+                    _textMesh.text = "Choisie le savoir faire que tu recherhce";
+                    break;
+                
                 case CardType.Skill :
                     if (_cardDeck[0].cardData.Type == CardType.Empty) return;
                     _listSkill.SetActive(false);
@@ -134,7 +176,10 @@ namespace CardRH
                     if (_cardDeck[2].cardData.Type == CardType.Empty
                         || _cardDeck[3].cardData.Type == CardType.Empty
                         || _cardDeck[4].cardData.Type == CardType.Empty) return;
+                    _textMesh.text = "Voici ton deck, est ce que il te convient?";
                     _listContext.SetActive(false);
+                    DisplayFinalDeck();
+                    _deckPhase = CardType.Empty;
                     break;
             
                 default:
