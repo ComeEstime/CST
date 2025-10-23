@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using CardRH;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class CandidateScript : MonoBehaviour
 {
-    [FormerlySerializedAs("_deck")]
     [Header("SO")] 
     [SerializeField] private DeckCandidate _deckScript;
+
+    [Header("Image")] 
+    [SerializeField] private Image _imageCandidate;
+    
     private CandidateSO _currentCandidate;
     
 
@@ -16,6 +20,7 @@ public class CandidateScript : MonoBehaviour
     {
         ClearDeck();
         _currentCandidate = newCandidate;
+        _imageCandidate.sprite = _currentCandidate.Art;
         _deckScript.InitDeck(_currentCandidate.CandidateDeck);
     }
 
