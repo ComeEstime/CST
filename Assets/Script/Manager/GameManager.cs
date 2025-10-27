@@ -49,6 +49,8 @@ namespace CardRH
         [SerializeField] private CandidateScript _candidateScript;
         [SerializeField] private CandidateDisplayScript _candidateDisplayScript;
         private PlaceType _currentPlace = PlaceType.None;
+
+        [Header("UI")] [SerializeField] private TextMeshProUGUI _textPlace;
         
         [Header("Time")]
         [SerializeField] private int _timeRessource = 25;
@@ -88,13 +90,35 @@ namespace CardRH
                 _candidateDisplayScript.DisplayCandidate();
                 return;
             }
-            
+
             _currentPlace = newPlace;
-            
+
+            DisplayPlaceName();
             ChangeCanvas(GamePhase.MeetCandidate);
             DisplayMeetCandidate();
         }
 
+        public void DisplayPlaceName()
+        {
+            switch (_currentPlace)
+            {
+                case PlaceType.School :
+                    _textPlace.text = "École";
+                    break;
+                case PlaceType.Cooptation :
+                    _textPlace.text = "Cooptation";
+                    break;
+                
+                case PlaceType.Hall :
+                    _textPlace.text = "Hall/Forum";
+                    break;
+                
+                default:
+                    _textPlace.text = "Néant";
+                    break;
+            }
+        }
+        
         public void StayPlace()
         {
             //Finish and save the candidate
