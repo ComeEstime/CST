@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using CardRH;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeckCandidate : MonoBehaviour
@@ -8,13 +10,15 @@ public class DeckCandidate : MonoBehaviour
     [SerializeField] private CardView _prefabCard;
     [SerializeField] private List<CardSO> _hidden;
 
-    [Header("UI")] [SerializeField] private Transform _secondDeckTransform;
+    [Header("UI")] [SerializeField] public Transform _secondDeckTransform;
 
-    private List<CardSO> _deckCard = new List<CardSO>();
+    private List<CardView> _deckCard = new List<CardView>();
+
+    public event Action NewGoldenDetected;
 
     public void InitDeck(List<CardSO> newDeck)
     {
-        _deckCard.Clear();
+        NewDeck();
         if (newDeck != null & newDeck.Count > 0)
         {
             int cardCount = 0;
@@ -51,13 +55,34 @@ public class DeckCandidate : MonoBehaviour
                         instance.cardData.IsGolden = true;
                     }
                 }
-                _deckCard.Add(instance.cardData);
+                _deckCard.Add(instance);
+                instance.GoldenCardEvent += DisplayCardSame;
             }
         }
     }
 
+    public void DisplayCardSame()
+    {
+        NewGoldenDetected?.Invoke();
+    }
+
+    public void NewDeck()
+    {
+        List<CardSO> temp = new List<CardSO>();
+        foreach (var VARIABLE in _deckCard)
+        {
+            VARIABLE.GoldenCardEvent -= DisplayCardSame;
+            temp.Add(VARIABLE.cardData);
+        }
+        temp.Clear();
+    }
     public List<CardSO> GetDeck()
     {
-        return _deckCard;
+        List<CardSO> temp = new List<CardSO>();
+        foreach (var VARIABLE in _deckCard)
+        {
+            temp.Add(VARIABLE.cardData);
+        }
+        return temp;
     }
 }

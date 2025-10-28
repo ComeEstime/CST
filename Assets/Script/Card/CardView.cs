@@ -18,6 +18,7 @@ namespace CardRH
         [SerializeField] private GameObject GoldenBorder;
 
         [SerializeField] public CardSO cardData;
+        public event Action GoldenCardEvent;
 
         public void SetData(CardSO card)
         {
@@ -61,7 +62,11 @@ namespace CardRH
             if (txtCost != null) txtCost.text = cardData.Cost.ToString();
             if (imgBorder != null) imgBorder.sprite = cardData.Border;
             if (imgArt != null) imgArt.sprite = cardData.Art;
-            if (GoldenBorder) GoldenBorder.SetActive(cardData.IsGolden);
+            if (GoldenBorder)
+            {
+                GoldenBorder.SetActive(cardData.IsGolden);
+                GoldenCardEvent?.Invoke();
+            }
         }
 
         //DEBUG PACKAGE

@@ -23,6 +23,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72c65e9d64899814799d887d86a49b76, type: 2}
   - {fileID: 11400000, guid: bf45a8fdf1df8974ebbc98bd5ca042c0, type: 2}
   - {fileID: 11400000, guid: 34fb0e99a11ee7d4ca58d1e26c718fa3, type: 2}
+  - {fileID: 11400000, guid: 576ab84711d63f046b82d7cb91d31850, type: 2}
+  - {fileID: 11400000, guid: 1c58e4f8a5f5b864fac436ca7c732003, type: 2}
+  - {fileID: 11400000, guid: d52a9d41383745547bdffffdcc9e89de, type: 2}
+  - {fileID: 11400000, guid: c373fa076995a2744995a3b11825af4a, type: 2}
   CandidatePlace: 00000000
   HaveBeenSee: 0
   NumberCardInCommun: 0
