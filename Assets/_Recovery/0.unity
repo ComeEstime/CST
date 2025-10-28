@@ -5111,6 +5111,14 @@ MonoBehaviour:
   - {fileID: 1403140840}
   - {fileID: 1871713421}
   - {fileID: 729463534}
+  _listSkill: {fileID: 0}
+  _listSoftSkill: {fileID: 0}
+  _listContext: {fileID: 0}
+  _finalDeck: {fileID: 0}
+  _textMesh: {fileID: 0}
+  _buttonStart: {fileID: 0}
+  _buttonRefoundDeck: {fileID: 0}
+  _nextChoice: {fileID: 0}
 --- !u!1001 &869241180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6360,6 +6368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candidate
   _deckScript: {fileID: 1607396483}
+  _imageCandidate: {fileID: 0}
 --- !u!114 &1088044435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6430,13 +6439,24 @@ MonoBehaviour:
   CurrentPhase: 2
   _canvasDeckBuild: {fileID: 574147481}
   _canvasPlaceChoose: {fileID: 43681410}
+  _canvasMeetCandidate: {fileID: 0}
   _canvasCandidate: {fileID: 331823765}
+  _canvasDeskop: {fileID: 0}
+  _HUDGame: {fileID: 0}
+  _imageSchool: {fileID: 0}
+  _imageCooptation: {fileID: 0}
+  _imageHall: {fileID: 0}
+  _background: []
   CardViewDeck: {fileID: 858010240}
   _candidateList:
   - {fileID: 11400000, guid: a254df5e08f4f3645acd1f87ae83a539, type: 2}
   - {fileID: 11400000, guid: 89ae29920d8cdd8438372783d14276e8, type: 2}
   - {fileID: 11400000, guid: c47833821128dfa4785a577ecab8d7e3, type: 2}
+  _meetCandidate: {fileID: 0}
+  _meetDeck: {fileID: 0}
   _candidateScript: {fileID: 1088044434}
+  _candidateDisplayScript: {fileID: 0}
+  _textPlace: {fileID: 0}
   _timeRessource: 25
   _textTime: {fileID: 150101346}
 --- !u!4 &1095183674
@@ -8730,7 +8750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeckCandidate
   _prefabCard: {fileID: 1052683617125264593, guid: 0e45dca967512d3438dc4447f195ab33, type: 3}
-  _empty: {fileID: 11400000, guid: 469e4ee38ce179f449fdb41d18d425d0, type: 2}
+  _hidden: []
+  _secondDeckTransform: {fileID: 0}
 --- !u!114 &1607396484
 MonoBehaviour:
   m_ObjectHideFlags: 0

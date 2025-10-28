@@ -8,6 +8,8 @@ public class DeckCandidate : MonoBehaviour
     [SerializeField] private CardView _prefabCard;
     [SerializeField] private List<CardSO> _hidden;
 
+    [Header("UI")] [SerializeField] private Transform _secondDeckTransform;
+
     private List<CardSO> _deckCard = new List<CardSO>();
 
     public void InitDeck(List<CardSO> newDeck)
@@ -15,9 +17,14 @@ public class DeckCandidate : MonoBehaviour
         _deckCard.Clear();
         if (newDeck != null & newDeck.Count > 0)
         {
+            int cardCount = 0;
             foreach (CardSO c in newDeck)
             {
-                CardView instance = Instantiate(_prefabCard, gameObject.transform);
+                CardView instance = null;
+                if(cardCount >= 6) instance = Instantiate(_prefabCard, _secondDeckTransform);
+                else instance = Instantiate(_prefabCard, gameObject.transform);
+                
+                cardCount++;
                 instance.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 
                 switch (c.Type)

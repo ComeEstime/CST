@@ -22,7 +22,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c373fa076995a2744995a3b11825af4a, type: 2}
   - {fileID: 11400000, guid: 44d8d7527875c4c4b8ff6d29fab3da8f, type: 2}
   - {fileID: 11400000, guid: a5afbe1442a11164fbafe379b143c523, type: 2}
-  - {fileID: 11400000, guid: c1a4b7eb2da4f4c4a95f0240b2d4a5f4, type: 2}
+  - {fileID: 11400000, guid: 4058740b42feb8f41b37e137e4303870, type: 2}
+  - {fileID: 11400000, guid: 6bad632a0ed4f0048b8b87184272af21, type: 2}
+  - {fileID: 11400000, guid: 73cdfa626ce8031479514a0866b974bf, type: 2}
+  - {fileID: 11400000, guid: 118ef0f127a1f764fbc2aded82073bb7, type: 2}
+  - {fileID: 11400000, guid: af1f4c5541d9bc04c890429df63cef87, type: 2}
+  - {fileID: 11400000, guid: d52a9d41383745547bdffffdcc9e89de, type: 2}
+  - {fileID: 11400000, guid: c5884874c6454f747b8d943dfd9c3592, type: 2}
   CandidatePlace: 0000000001000000
   HaveBeenSee: 0
   NumberCardInCommun: 0
