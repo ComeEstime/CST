@@ -14,7 +14,7 @@ namespace CardRH
         public Sprite Border;
         public Sprite Art;
         public bool InDeck;
-        public bool IsGolden;
+        public bool IsGolden = false;
         public List<CardTrait> Traits = new List<CardTrait>();
         public List<PlaceType> Place = new List<PlaceType>();
 

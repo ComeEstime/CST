@@ -62,8 +62,9 @@ namespace CardRH
             if (txtCost != null) txtCost.text = cardData.Cost.ToString();
             if (imgBorder != null) imgBorder.sprite = cardData.Border;
             if (imgArt != null) imgArt.sprite = cardData.Art;
-            if (GoldenBorder)
+            if (cardData.IsGolden)
             {
+                Debug.Log("I'm not hiding, now I'm shinning like i'm born to be");
                 GoldenBorder.SetActive(cardData.IsGolden);
                 GoldenCardEvent?.Invoke();
             }

@@ -76,6 +76,7 @@ public class DeckCandidate : MonoBehaviour
         }
         temp.Clear();
     }
+    
     public List<CardSO> GetDeck()
     {
         List<CardSO> temp = new List<CardSO>();
