@@ -64,7 +64,6 @@ namespace CardRH
             if (imgArt != null) imgArt.sprite = cardData.Art;
             if (cardData.IsGolden)
             {
-                Debug.Log("I'm not hiding, now I'm shinning like i'm born to be");
                 GoldenBorder.SetActive(cardData.IsGolden);
                 GoldenCardEvent?.Invoke();
             }
