@@ -69,10 +69,9 @@ namespace CardRH
             List<CardView> tempCard = CardViewDeck.CardChoose;
             for (int i = 0; i < CardViewDeck.CardChoose.Count; i++)
             {
-                if (!CardViewDeck.CardChoose[i].gameObject.activeSelf) { Debug.Log("Non frr tu as pas toute les cartes"); return; }
+                if (!CardViewDeck.CardChoose[i].gameObject.activeSelf) return;
                 _cardDeck.Add(CardViewDeck.CardChoose[i].cardData);
             }
-            Debug.Log("OK c'est bon on passe à la suite");
 
             ChangeCanvas(GamePhase.ChoosePlace);
             
