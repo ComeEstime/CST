@@ -304,7 +304,6 @@ RectTransform:
   - {fileID: 980240573}
   - {fileID: 1498597055}
   - {fileID: 1649033998}
-  - {fileID: 1615607721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -63496,6 +63495,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
   m_PrefabInstance: {fileID: 1841878793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615607722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7107936978383917995, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+  m_PrefabInstance: {fileID: 1841878793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9dc27e398f25d4791082364588d6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622820123
 GameObject:
   m_ObjectHideFlags: 0
@@ -63855,11 +63865,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1785220707}
+  - {fileID: 1615607721}
   m_Father: {fileID: 43681411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -340, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649033999
@@ -63871,10 +63882,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1649033997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45842e52194fa5a48a45e8d67e410770, type: 3}
+  m_Script: {fileID: 11500000, guid: 02beda76957e72e47bcb43bfd1950ceb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RainbowArt.CleanFlatUI.TooltipInDetermine
-  tooltip: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::RainbowArt.CleanFlatUI.TooltipDetermine
+  tooltip: {fileID: 1615607722}
 --- !u!1001 &1649728874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64659,7 +64670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 657.8125, y: 628.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785220708
@@ -65144,16 +65155,45 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 43681411}
+    m_TransformParent: {fileID: 1649033998}
     m_Modifications:
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_text
+      value: "L'\xE9cole\nIci vous rencontrerez des candidats avec des dipl\xF4me
+        mais moins d'experience"
+      objectReference: {fileID: 0}
     - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_isOrthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2684658502336125884, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 540799125138992629, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -65184,7 +65224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 62.69
+      value: 170.33
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65204,15 +65244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -65220,7 +65260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2220609164166950249, guid: de9aa84c1d5e35d4e9dabc98104710ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
