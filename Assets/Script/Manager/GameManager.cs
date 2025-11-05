@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using CardRH;
 using NUnit.Framework.Constraints;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -51,6 +52,7 @@ namespace CardRH
         private PlaceType _currentPlace = PlaceType.None;
 
         [Header("UI")] [SerializeField] private TextMeshProUGUI _textPlace;
+        [SerializeField] private GameObject _cityGrid;
         
         [Header("Time")]
         [SerializeField] private int _timeRessource = 25;
@@ -216,6 +218,7 @@ namespace CardRH
                 
                 case GamePhase.ChoosePlace :
                     _canvasPlaceChoose.gameObject.SetActive(false);
+                    _cityGrid.SetActive(false);
                     break;
                 
                 case GamePhase.MeetCandidate :
@@ -240,6 +243,7 @@ namespace CardRH
                 
                 case GamePhase.ChoosePlace :
                     _canvasPlaceChoose.gameObject.SetActive(true);
+                    _cityGrid.SetActive(true);
                     break;
                 
                 case GamePhase.MeetCandidate :

@@ -16,6 +16,9 @@ namespace CardRH
         [SerializeField] private GameObject _listContext;
         [SerializeField] private GameObject  _finalDeck;
         [SerializeField] private TextMeshProUGUI _textMesh;
+        [SerializeField] private GameObject _skillGameObject;
+        [SerializeField] private GameObject _softSkillGameObject;
+        [SerializeField] private GameObject _contextGameObject;
         
         [Header("Button")]
         [SerializeField] private Button _buttonStart;
@@ -156,7 +159,10 @@ namespace CardRH
                     _cardDeck[0].transform.parent.gameObject.SetActive(true);
                     _cardDeck[1].transform.parent.gameObject.SetActive(true);
                     _deckPhase = CardType.Skill;
-                    _textMesh.text = "Choisie le savoir faire que tu recherhce";
+                    _textMesh.text = "Choisis le savoir-faire que tu recherches";
+                    _skillGameObject.SetActive(false);
+                    _softSkillGameObject.SetActive(false);
+                    _contextGameObject.SetActive(false);
                     break;
                 
                 case CardType.Skill :
@@ -169,7 +175,7 @@ namespace CardRH
                     
                     _cardDeck[2].transform.parent.gameObject.SetActive(true);
                     _cardDeck[3].transform.parent.gameObject.SetActive(true);
-                    _textMesh.text = "Choisie le savoir être que tu recherhce";
+                    _textMesh.text = "Choisis le savoir-être que tu recherches";
                     _deckPhase = CardType.SoftSkill;
                     break;
             
@@ -183,16 +189,19 @@ namespace CardRH
                     
                     _cardDeck[4].transform.parent.gameObject.SetActive(true);
                     _cardDeck[5].transform.parent.gameObject.SetActive(true);
-                    _textMesh.text = "Choisie les contexte de job que tu recherhce";
+                    _textMesh.text = "Choisis les contextes de travail que tu recherches";
                     _deckPhase = CardType.Context;
                     break;
             
                 case CardType.Context :
                     if (_cardDeck[4].cardData.Type == CardType.Empty
                         || _cardDeck[5].cardData.Type == CardType.Empty) return;
-                    _textMesh.text = "Voici ton deck, est ce que il te convient?";
+                    _textMesh.text = "Voici tes cartes de recherche, est-ce qu'elles te conviennent ?";
                     _listContext.SetActive(false);
                     DisplayFinalDeck();
+                    _skillGameObject.SetActive(true);
+                    _softSkillGameObject.SetActive(true);
+                    _contextGameObject.SetActive(true);
                     _deckPhase = CardType.Empty;
                     break;
             
