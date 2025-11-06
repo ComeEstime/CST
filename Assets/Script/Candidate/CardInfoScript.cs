@@ -1,22 +1,27 @@
 using CardRH;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardInfoScript : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private Image _image;
 
     private CandidateSO _candidateInfo;
     
-    public void DisplayInfo(string _descText)
+    public void DisplayInfo()
     {
-        _description.text = _descText;
+        _name.text = _candidateInfo.Name;
+        _description.text = _candidateInfo.Description;
+        _image.sprite = _candidateInfo.HeadArt;
     }
 
     public void SetInfo(CandidateSO newCandidate)
     {
         _candidateInfo = newCandidate;
-        DisplayInfo(_candidateInfo.Description);
+        DisplayInfo();
     }
 
     public void ValidCandidate()
