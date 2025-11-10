@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using CardRH;
 using NUnit.Framework.Constraints;
@@ -53,6 +54,8 @@ namespace CardRH
 
         [Header("UI")] [SerializeField] private TextMeshProUGUI _textPlace;
         [SerializeField] private GameObject _cityGrid;
+        [SerializeField] private Animator _transition;
+        private float _transitionTime = 1f;
         
         [Header("Time")]
         [SerializeField] private int _timeRessource = 25;
@@ -72,31 +75,31 @@ namespace CardRH
                 if (!CardViewDeck.CardChoose[i].gameObject.activeSelf) return;
                 _cardDeck.Add(CardViewDeck.CardChoose[i].cardData);
             }
-
-            ChangeCanvas(GamePhase.ChoosePlace);
-            
-            //Active HUD
-            _HUDGame.gameObject.SetActive(true);
-            _HUDGame.SetCard(_cardDeck);
-            
-            DisplayTime();
+            StartCoroutine(LoadCanvas(GamePhase.ChoosePlace, after: () =>
+            { 
+                _HUDGame.gameObject.SetActive(true);
+                _HUDGame.SetCard(_cardDeck);
+                DisplayTime();
+            }));
         }
 
         public void EnterPlace(PlaceType newPlace)
         {
             if (newPlace == PlaceType.Office)
             {
-                ChangeCanvas(GamePhase.ChooseCandidate);
+                StartCoroutine(LoadCanvas(GamePhase.ChooseCandidate, after: () =>
+                { 
+                    _candidateDisplayScript.DisplayCandidate();
+                }));
                 
-                _candidateDisplayScript.DisplayCandidate();
                 return;
             }
 
             _currentPlace = newPlace;
 
             DisplayPlaceName();
-            ChangeCanvas(GamePhase.MeetCandidate);
-            DisplayMeetCandidate();
+            StartCoroutine(LoadCanvas(GamePhase.MeetCandidate, after: DisplayMeetCandidate));
+            
         }
 
         public void DisplayPlaceName()
@@ -138,7 +141,10 @@ namespace CardRH
             _candidateScript.SetCandidateNull();
             
             //Change Canvas
-            ChangeCanvas(GamePhase.ChoosePlace);
+            StartCoroutine(LoadCanvas(GamePhase.ChoosePlace, after: () =>
+            { 
+                _currentPlace = PlaceType.None;
+            }));
             
             _currentPlace = PlaceType.None;
         }
@@ -166,8 +172,10 @@ namespace CardRH
 
         public void SeeCandidate(CandidateSO tempCandidate)
         {
-            ChangeCanvas(GamePhase.DiscoverCandidate);
-            _candidateScript.ChangeCandidate(tempCandidate.CreateClone());
+            StartCoroutine(LoadCanvas(GamePhase.DiscoverCandidate, after: () =>
+            { 
+                _candidateScript.ChangeCandidate(tempCandidate.CreateClone());
+            }));
         }
             
         public CandidateSO FindCandidate()
@@ -206,6 +214,18 @@ namespace CardRH
             }
         }
 
+        
+        IEnumerator LoadCanvas(GamePhase newPhase, System.Action after = null)
+        {
+            _transition.SetTrigger("Start");
+
+            yield return new WaitForSeconds(_transitionTime);
+        
+            ChangeCanvas(newPhase);
+            
+            after?.Invoke();
+        }
+        
         public void ChangeCanvas(GamePhase newPhase)
         {
             //Remove last canva

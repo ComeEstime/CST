@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Mary
   Age: CharacterAge
-  Description: "Mary est une jeune femme tr\xE8s gentille mais elle \xE0 \xE9tait
-    harcel\xE9 par Herv\xE9"
+  Description: "Ce candidat a valid\xE9 un bac +4 orient\xE9 vers la gestion financi\xE8re.
+    Il aime voyager. Il a r\xE9alis\xE9 ses deux derni\xE8res ann\xE9es en alternance
+    dans une soci\xE9t\xE9 internationale. "
   Art: {fileID: 21300000, guid: 836debbccd6ea54448f01901358258e1, type: 3}
   HeadArt: {fileID: 21300000, guid: 1f88778197c8567468652acda3fd1e79, type: 3}
   CandidateDeck:
