@@ -19,6 +19,7 @@ namespace CardRH
         [SerializeField] private GameObject _skillGameObject;
         [SerializeField] private GameObject _softSkillGameObject;
         [SerializeField] private GameObject _contextGameObject;
+        [SerializeField] private GameObject _warningAlert;
         
         [Header("Button")]
         [SerializeField] private Button _buttonStart;
@@ -46,30 +47,6 @@ namespace CardRH
                 case CardType.Context:
                     temp1 = 4;
                     temp2 = 5;
-                    /*if (!_cardDeck[2].gameObject.activeSelf)
-                    {
-                        _cardDeck[2].cardData = newCard.cardData.CreateClone();
-                        _cardDeck[2].cardData.InDeck = true;
-                        _cardDeck[2].gameObject.SetActive(true);
-                    }
-                    else if (!_cardDeck[3].gameObject.activeSelf)
-                    {
-                        _cardDeck[3].cardData = newCard.cardData.CreateClone();
-                        _cardDeck[3].cardData.InDeck = true;
-                        _cardDeck[3].gameObject.SetActive(true);
-                    }
-                    else if (!_cardDeck[4].gameObject.activeSelf)
-                    {
-                        _cardDeck[4].cardData = newCard.cardData.CreateClone();
-                        _cardDeck[4].cardData.InDeck = true;
-                        _cardDeck[4].gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        _cardDeck[4].cardData = newCard.cardData.CreateClone();
-                        _cardDeck[4].cardData.InDeck = true;
-                        _cardDeck[4].gameObject.SetActive(true);
-                    }*/
                     break;
                 
                 default:
@@ -83,7 +60,7 @@ namespace CardRH
                 _cardDeck[temp1].cardData.InDeck = true;
                 _cardDeck[temp1].gameObject.SetActive(true);
             }
-            else /*if(!_cardDeck[temp2].gameObject.activeSelf)*/
+            else
             {
                 _cardDeck[temp2].cardData = newCard.cardData.CreateClone();
                 _cardDeck[temp2].cardData.InDeck = true;
@@ -166,8 +143,12 @@ namespace CardRH
                     break;
                 
                 case CardType.Skill :
-                    if (_cardDeck[0].cardData.Type == CardType.Empty 
-                        || _cardDeck[1].cardData.Type == CardType.Empty) return;
+                    if (_cardDeck[0].cardData.Type == CardType.Empty
+                        || _cardDeck[1].cardData.Type == CardType.Empty)
+                    {
+                        _warningAlert.SetActive(true);
+                        return;
+                    }
                     _listSkill.SetActive(false);
                     _listSoftSkill.SetActive(true);
                     _cardDeck[0].transform.parent.gameObject.SetActive(false);
@@ -181,7 +162,11 @@ namespace CardRH
             
                 case CardType.SoftSkill :
                     if (_cardDeck[2].cardData.Type == CardType.Empty 
-                        || _cardDeck[3].cardData.Type == CardType.Empty) return;
+                        || _cardDeck[3].cardData.Type == CardType.Empty)
+                    {
+                        _warningAlert.SetActive(true);
+                        return;
+                    }
                     _listSoftSkill.SetActive(false);
                     _listContext.SetActive(true);
                     _cardDeck[2].transform.parent.gameObject.SetActive(false);
@@ -195,7 +180,11 @@ namespace CardRH
             
                 case CardType.Context :
                     if (_cardDeck[4].cardData.Type == CardType.Empty
-                        || _cardDeck[5].cardData.Type == CardType.Empty) return;
+                        || _cardDeck[5].cardData.Type == CardType.Empty)
+                    {
+                        _warningAlert.SetActive(true);
+                        return;
+                    }
                     _textMesh.text = "Voici tes cartes de recherche, est-ce qu'elles te conviennent ?";
                     _listContext.SetActive(false);
                     DisplayFinalDeck();
