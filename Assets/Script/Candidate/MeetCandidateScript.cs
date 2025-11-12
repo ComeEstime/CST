@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -24,6 +25,9 @@ namespace CardRH
         [Header("Click")]
         public UnityEvent OnClick;
 
+
+        [Header("NameText")] [SerializeField] private TextMeshProUGUI _nameText;
+        
         private CandidateSO _candidate;
         public CandidateSO Candidate
         {
@@ -78,6 +82,7 @@ namespace CardRH
         {
             _candidate = newCandidate;
             _imageCandidate.sprite = _candidate.Art;
+            _nameText.text = _candidate.Name;
 
         }
         
@@ -86,15 +91,5 @@ namespace CardRH
             CardInfoScript activeCard = Instantiate(_cardInfo, GameObject.Find("CanvasMeetCandidate").transform);
             activeCard.SetInfo(_candidate);
         }
-
-        /*private void OnDisable()
-        {
-            if (_activeCard) Destroy(_activeCard.gameObject);
-        }
-
-        private void OnDestroy()
-        {
-            if (_activeCard) Destroy(_activeCard.gameObject);
-        }*/
     }
 }

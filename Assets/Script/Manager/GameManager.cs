@@ -54,6 +54,7 @@ namespace CardRH
 
         [Header("UI")] [SerializeField] private TextMeshProUGUI _textPlace;
         [SerializeField] private GameObject _cityGrid;
+        [SerializeField] private GameObject _emptyCandidate;
         [SerializeField] private Animator _transition;
         private float _transitionTime = 1f;
         
@@ -155,7 +156,9 @@ namespace CardRH
             {
                 Destroy(child.gameObject);
             }
+            _emptyCandidate.gameObject.SetActive(false);
 
+            int countCandidate = 0;
             foreach (var c in _candidateList)
             {
                 foreach (var cp in c.CandidatePlace)
@@ -164,10 +167,13 @@ namespace CardRH
                     {
                         MeetCandidateScript candidateMeet = Instantiate(_meetCandidate, _meetDeck.transform);
                         candidateMeet.SetCandidate(c);
+                        countCandidate++;
                         break;
                     }
                 }
             }
+
+            if (countCandidate == 0) _emptyCandidate.gameObject.SetActive(true);
         }
 
         public void SeeCandidate(CandidateSO tempCandidate)
