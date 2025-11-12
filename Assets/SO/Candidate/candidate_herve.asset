@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: candidate_herve
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: "Herv\xE9"
-  Age: CharacterAge
+  Age: 22
   Description: "Herv\xE9 est nu mec cool mais il a harcel\xE9 une de ces coll\xE8gue
     et \xE7a c'est pas ouf"
   Art: {fileID: 21300000, guid: 50bfac8c47b757644a20bfef0db7cd81, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: candidate_tiherry
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Thierry
-  Age: CharacterAge
+  Age: 50
   Description: Juste un mec chill qui est est tranquille dans son coin
   Art: {fileID: 21300000, guid: 484ff1c537de7f6449b6b4f4f56a6e88, type: 3}
   HeadArt: {fileID: 21300000, guid: 9eacd63af11ab3e4a8438d9d83ad67d3, type: 3}

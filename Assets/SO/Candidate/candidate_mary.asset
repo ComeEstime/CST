@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: candidate_mary
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Mary
-  Age: CharacterAge
+  Age: 26
   Description: "Ce candidat a valid\xE9 un bac +4 orient\xE9 vers la gestion financi\xE8re.
     Il aime voyager. Il a r\xE9alis\xE9 ses deux derni\xE8res ann\xE9es en alternance
     dans une soci\xE9t\xE9 internationale. "

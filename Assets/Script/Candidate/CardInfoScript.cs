@@ -8,6 +8,7 @@ public class CardInfoScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _age;
 
     private CandidateSO _candidateInfo;
     
@@ -16,6 +17,7 @@ public class CardInfoScript : MonoBehaviour
         _name.text = _candidateInfo.Name;
         _description.text = _candidateInfo.Description;
         _image.sprite = _candidateInfo.HeadArt;
+        _age.text = _candidateInfo.Age;
     }
 
     public void SetInfo(CandidateSO newCandidate)

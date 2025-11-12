@@ -50,6 +50,7 @@ public class CandidateScript : MonoBehaviour
     {
         _imageCandidate.sprite = _currentCandidate.Art;
         _nameCandidate.text = _currentCandidate.Name;
+        _ageCandidate.text = _currentCandidate.Age;
         _carteCandidate.text = _countNumberCard.ToString();
     }
     
