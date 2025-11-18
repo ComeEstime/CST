@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_Arthur
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Arthur
+  Age: 25
+  Description: "A fait son parcours de formation en alternance dans un cabinet comptable.
+    Cherche \xE0 pr\xE9sent plut\xF4t un poste dans une soci\xE9t\xE9."
+  Art: {fileID: 21300000, guid: 1123e83e903ad0341bd0d2b46eaa0484, type: 3}
+  HeadArt: {fileID: 21300000, guid: 8ca5f66350dc2da43a61ab510bb8a4d4, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: cd44900ff468af74490bfebad8ad2776, type: 2}
+  - {fileID: 11400000, guid: e1a71a6319907a84e9c52878a16ec2a4, type: 2}
+  - {fileID: 11400000, guid: 44d8d7527875c4c4b8ff6d29fab3da8f, type: 2}
+  - {fileID: 11400000, guid: 72c65e9d64899814799d887d86a49b76, type: 2}
+  - {fileID: 11400000, guid: 7c28ec84bf5502649a97f2f77fd73439, type: 2}
+  - {fileID: 11400000, guid: a7a0dbe44e0da044081cfe47f99bda34, type: 2}
+  - {fileID: 11400000, guid: b19344157823e724a96f61ec24b1fc78, type: 2}
+  - {fileID: 11400000, guid: af1f4c5541d9bc04c890429df63cef87, type: 2}
+  - {fileID: 11400000, guid: 9121e4218929a674a9d39e6107a4475e, type: 2}
+  - {fileID: 11400000, guid: 6b79e9e1606c07341b786c728c49a5c9, type: 2}
+  - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
+  CandidatePlace: 00000000
+  HaveBeenSee: 0
+  NumberCardInCommun: 0

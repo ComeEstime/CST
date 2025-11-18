@@ -26,9 +26,10 @@ namespace CardRH
             UpdateCardUI();
         }
 
-        private void Start()
+        private void Awake()
         {
-            //UpdateCardUI();
+            UpdateCardUI();
+            //Peu poser problème
         }
 
         public void UpdateCardUI()
