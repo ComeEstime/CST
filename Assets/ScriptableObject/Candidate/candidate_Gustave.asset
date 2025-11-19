@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_Gustave
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Gustave
+  Age: 37
+  Description: "Gustave arrive par le biais d'une cooptation interne. Il connait
+    bien votre structure et cherche \xE0 la rejoindre. Il travaille depuis plusieurs
+    ann\xE9es dans un secteur similaire au v\xF4tre mais souhaite \xE0 pr\xE9sent
+    faire \xE9voluer sa carri\xE8re. "
+  Art: {fileID: 21300000, guid: fd19a6db636d8a141afcc81f2b1b5eca, type: 3}
+  HeadArt: {fileID: 21300000, guid: 7e77e81e39df1894d9be24fd16eeca86, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: 68d21f2a034928540a01f31578c5a72a, type: 2}
+  - {fileID: 11400000, guid: b19344157823e724a96f61ec24b1fc78, type: 2}
+  - {fileID: 11400000, guid: 904c292290f296347a9630aeb38c62d1, type: 2}
+  - {fileID: 11400000, guid: 1c58e4f8a5f5b864fac436ca7c732003, type: 2}
+  - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
+  - {fileID: 11400000, guid: 73cdfa626ce8031479514a0866b974bf, type: 2}
+  - {fileID: 11400000, guid: e1a71a6319907a84e9c52878a16ec2a4, type: 2}
+  - {fileID: 11400000, guid: 7c28ec84bf5502649a97f2f77fd73439, type: 2}
+  - {fileID: 11400000, guid: 6bad632a0ed4f0048b8b87184272af21, type: 2}
+  - {fileID: 11400000, guid: 0510a06f15f487c44a9ca27df6214a09, type: 2}
+  - {fileID: 11400000, guid: cd44900ff468af74490bfebad8ad2776, type: 2}
+  - {fileID: 11400000, guid: 390072aaed5508c47b908c4b015949cd, type: 2}
+  CandidatePlace: 01000000
+  HaveBeenSee: 0
+  NumberCardInCommun: 0

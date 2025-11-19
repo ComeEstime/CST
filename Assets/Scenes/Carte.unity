@@ -27166,6 +27166,10 @@ MonoBehaviour:
   CardViewDeck: {fileID: 858010240}
   _candidateList:
   - {fileID: 11400000, guid: d703e8d0d0da8e2418e4ab504a77f8a8, type: 2}
+  - {fileID: 11400000, guid: bcec6408b5df3e849ad5d69f5ef1dc1d, type: 2}
+  - {fileID: 11400000, guid: 35d2e3695b1557e4c8bfce81ee5b23e4, type: 2}
+  - {fileID: 11400000, guid: f7bc66059f65a61499808a3039243e3f, type: 2}
+  - {fileID: 11400000, guid: 00e0aa55766354442b47352a1026f1bb, type: 2}
   _meetCandidate: {fileID: 8468501432195171460, guid: 95decec94a4993e448944ee5a59d92c0, type: 3}
   _meetDeck: {fileID: 1157939462}
   _candidateScript: {fileID: 1088044434}
