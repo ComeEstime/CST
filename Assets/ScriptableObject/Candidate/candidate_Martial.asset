@@ -12,12 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
   m_Name: candidate_Martial
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
-  Name: CharacterName
-  Age: CharacterAge
-  Description: None
-  Art: {fileID: 0}
-  HeadArt: {fileID: 0}
-  CandidateDeck: []
-  CandidatePlace: 
+  Name: Martial
+  Age: 52
+  Description: "Martial est actuellement en poste et cherche \xE0 changer. Il travaille
+    depuis plusieurs ann\xE9es dans la m\xEAme structure et souhaiterait voir \"autre
+    chose\". De mani\xE8re g\xE9n\xE9rale il est totalement autonome sur son poste.
+    Il a refus\xE9 il y a quelques ann\xE9es le poste de manager du service car tr\xE8s
+    investit dans le domaine associatif il ne se sent pas comp\xE9tent pour encadrer
+    d'autres comptables. Il pense que manager \"c'est un autre m\xE9tier\". "
+  Art: {fileID: 21300000, guid: 225a7cc9dc45e96439727bf97f186352, type: 3}
+  HeadArt: {fileID: 21300000, guid: 885877d6ba4cf7c469b569d13f828814, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: c0bf0afbf81502244b56562655477c2f, type: 2}
+  - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
+  - {fileID: 11400000, guid: 904c292290f296347a9630aeb38c62d1, type: 2}
+  - {fileID: 11400000, guid: 390072aaed5508c47b908c4b015949cd, type: 2}
+  - {fileID: 11400000, guid: 0510a06f15f487c44a9ca27df6214a09, type: 2}
+  - {fileID: 11400000, guid: 4e93cd6dd0539474eaac556a4a614f6c, type: 2}
+  - {fileID: 11400000, guid: 6bad632a0ed4f0048b8b87184272af21, type: 2}
+  - {fileID: 11400000, guid: a7a0dbe44e0da044081cfe47f99bda34, type: 2}
+  - {fileID: 11400000, guid: be7205b498e5157418087105a05fe223, type: 2}
+  - {fileID: 11400000, guid: a5afbe1442a11164fbafe379b143c523, type: 2}
+  - {fileID: 11400000, guid: e1a71a6319907a84e9c52878a16ec2a4, type: 2}
+  - {fileID: 11400000, guid: 9eb259832ec1aa344a5936f548a3c566, type: 2}
+  CandidatePlace: 03000000
   HaveBeenSee: 0
   NumberCardInCommun: 0
