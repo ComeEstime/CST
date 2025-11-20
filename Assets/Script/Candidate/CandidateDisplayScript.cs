@@ -13,7 +13,7 @@ public class CandidateDisplayScript : MonoBehaviour
             if (candidate.HaveBeenSee)
             {
                 CandidateOfficeView instance = Instantiate(_candidatePrefab, gameObject.transform);
-                instance.NumberStars(candidate.NumberCardInCommun);
+                //instance.NumberStars(candidate.NumberCardInCommun);
             }
         }
     }

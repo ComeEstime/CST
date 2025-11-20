@@ -17,6 +17,13 @@ public class OfficePhase : MonoBehaviour, IPhaseInterface
 
     private void DisplayAllCandidate()
     {
+        //Delete all child
+        foreach (Transform child in _transformCandidat)
+        {
+            Destroy(child.gameObject);
+        }
+        
+        
         foreach (var candidate in _candidateList)
         {
             if (candidate.HaveBeenSee)
