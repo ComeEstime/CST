@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CandidateDisplayScript : MonoBehaviour
 {
-    [SerializeField] private CandidateView _candidatePrefab;
+    [SerializeField] private CandidateOfficeView _candidatePrefab;
 
     public void DisplayCandidate()
     {
@@ -12,7 +12,7 @@ public class CandidateDisplayScript : MonoBehaviour
         {
             if (candidate.HaveBeenSee)
             {
-                CandidateView instance = Instantiate(_candidatePrefab, gameObject.transform);
+                CandidateOfficeView instance = Instantiate(_candidatePrefab, gameObject.transform);
                 instance.NumberStars(candidate.NumberCardInCommun);
             }
         }

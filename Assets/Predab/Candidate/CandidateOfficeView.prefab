@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4169245227697402710}
   - component: {fileID: 3438159218367821234}
   m_Layer: 0
-  m_Name: CandidateView
+  m_Name: CandidateOfficeView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

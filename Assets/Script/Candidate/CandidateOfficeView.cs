@@ -3,12 +3,22 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CandidateView : MonoBehaviour
+public class CandidateOfficeView : MonoBehaviour
 {
     [SerializeField] private Image _imageCandidate; 
     [SerializeField] private List<Image> _stars;
     [SerializeField] private TextMeshProUGUI _nameCandidate;
 
+    private CandidateSO _candidate;
+
+    public void DisplayCandidate(CandidateSO newCandidate)
+    {
+        _candidate = newCandidate;
+        
+        
+        _imageCandidate.sprite = _candidate.HeadArt;
+    }
+    
     public void NumberStars(int numberStars)
     {
         switch (numberStars)

@@ -49,7 +49,7 @@ namespace CardRH
         [SerializeField] private MeetCandidateScript _meetCandidate;
         [SerializeField] private GameObject _meetDeck;
         [SerializeField] private CandidateScript _candidateScript;
-        [SerializeField] private CandidateDisplayScript _candidateDisplayScript;
+        [SerializeField] private OfficePhase _officeManager;
         private PlaceType _currentPlace = PlaceType.None;
 
         [Header("UI")] [SerializeField] private TextMeshProUGUI _textPlace;
@@ -90,7 +90,7 @@ namespace CardRH
             {
                 StartCoroutine(LoadCanvas(GamePhase.ChooseCandidate, after: () =>
                 { 
-                    _candidateDisplayScript.DisplayCandidate();
+                    _officeManager.EnterPhase();
                 }));
                 
                 return;
