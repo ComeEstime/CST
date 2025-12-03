@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: "C\xF4me est actuellement en poste depuis 7 ans, dans l'entreprise
     o\xF9 il a r\xE9alis\xE9 son alternance. Il souhaite \xE9voluer pour prendre
     plus de responsabilit\xE9 car il n'aura pas cette opportunit\xE9 dans sa structure
-    actuelle. Il ne quittera son poste que pour un CDI. "
+    actuelle. Il ne quittera son poste que pour un CDI."
   Art: {fileID: 21300000, guid: 5ea4a038f1fbd404693fca99663f51ec, type: 3}
   HeadArt: {fileID: 21300000, guid: 0dd8d1f65462fb7418439c8075cb35e0, type: 3}
   CandidateDeck:
@@ -32,7 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 73cdfa626ce8031479514a0866b974bf, type: 2}
   - {fileID: 11400000, guid: 390072aaed5508c47b908c4b015949cd, type: 2}
   - {fileID: 11400000, guid: 3da80151beacc444e967b83c1a9de200, type: 2}
-  - {fileID: 11400000, guid: ca5a4c4b2501f484f845718ab6953db6, type: 2}
+  - {fileID: 11400000, guid: af1f4c5541d9bc04c890429df63cef87, type: 2}
   CandidatePlace: 02000000
   HaveBeenSee: 0
   NumberCardInCommun: 0

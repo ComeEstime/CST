@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_Marion
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Marion
+  Age: 48
+  Description: "Marion a longtemps exerc\xE9 en tant que commer\xE7ante ind\xE9pendante,
+    g\xE9rant elle-m\xEAme toute sa comptabilit\xE9. Elle est parfaitement \xE0 l\u2019aise
+    dans l\u2019univers de la grande distribution et place l\u2019\xE9tat d\u2019esprit
+    client au c\u0153ur de son engagement professionnel."
+  Art: {fileID: 21300000, guid: 195903ddeee18294eb6353c17d8f0f85, type: 3}
+  HeadArt: {fileID: 21300000, guid: 5e015c26aa63fa74988cf6e06b5f6360, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: b19344157823e724a96f61ec24b1fc78, type: 2}
+  - {fileID: 11400000, guid: 72c65e9d64899814799d887d86a49b76, type: 2}
+  - {fileID: 11400000, guid: af1f4c5541d9bc04c890429df63cef87, type: 2}
+  - {fileID: 11400000, guid: c0bf0afbf81502244b56562655477c2f, type: 2}
+  - {fileID: 11400000, guid: 7c28ec84bf5502649a97f2f77fd73439, type: 2}
+  - {fileID: 11400000, guid: 1c58e4f8a5f5b864fac436ca7c732003, type: 2}
+  - {fileID: 11400000, guid: e1a71a6319907a84e9c52878a16ec2a4, type: 2}
+  - {fileID: 11400000, guid: a5afbe1442a11164fbafe379b143c523, type: 2}
+  - {fileID: 11400000, guid: a7a0dbe44e0da044081cfe47f99bda34, type: 2}
+  - {fileID: 11400000, guid: 269188a8d11a9e341a0459453892aafb, type: 2}
+  CandidatePlace: 04000000
+  HaveBeenSee: 0
+  NumberCardInCommun: 0

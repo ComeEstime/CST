@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Arthur
   Age: 25
-  Description: "A fait son parcours de formation en alternance dans un cabinet comptable.
-    Cherche \xE0 pr\xE9sent plut\xF4t un poste dans une soci\xE9t\xE9."
+  Description: "Arthur a fait son parcours de formation en alternance dans un cabinet
+    comptable. Il cherche \xE0 pr\xE9sent un poste dans une soci\xE9t\xE9 afin de
+    progresser en comptabilit\xE9 g\xE9n\xE9rale."
   Art: {fileID: 21300000, guid: 1123e83e903ad0341bd0d2b46eaa0484, type: 3}
   HeadArt: {fileID: 21300000, guid: 8ca5f66350dc2da43a61ab510bb8a4d4, type: 3}
   CandidateDeck:

@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: "Gustave arrive par le biais d'une cooptation interne. Il connait
     bien votre structure et cherche \xE0 la rejoindre. Il travaille depuis plusieurs
     ann\xE9es dans un secteur similaire au v\xF4tre mais souhaite \xE0 pr\xE9sent
-    faire \xE9voluer sa carri\xE8re. "
+    faire \xE9voluer sa carri\xE8re."
   Art: {fileID: 21300000, guid: fd19a6db636d8a141afcc81f2b1b5eca, type: 3}
   HeadArt: {fileID: 21300000, guid: 7e77e81e39df1894d9be24fd16eeca86, type: 3}
   CandidateDeck:

@@ -118,6 +118,14 @@ namespace CardRH
                     _textPlace.text = "Hall/Forum";
                     break;
                 
+                case PlaceType.SocialNetwork :
+                    _textPlace.text = "Jobboard / Réseau sociaux";
+                    break;
+                
+                case PlaceType.Alternative : 
+                    _textPlace.text = "Sources alternatives";
+                    break;
+                
                 default:
                     _textPlace.text = "Néant";
                     break;

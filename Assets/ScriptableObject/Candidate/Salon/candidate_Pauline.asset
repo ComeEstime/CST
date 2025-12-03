@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Pauline
   Age: 32
-  Description: "Pauline vient \xE0 notre rencontre apr\xE8s une p\xE9riode \xE0 l'\xE9tranger.
-    Elle cherche un poste sur le secteur. Tr\xE8s flexible elle a une ma\xEEtrise
-    globale du secteur de la comptabilit\xE9 car avant de partir \"faire son tour
-    du monde\" elle a travaill\xE9 comme comptable dans une PME et poss\xE8de des
-    comp\xE9tences transverses. "
+  Description: "Pauline, vient \xE0 notre rencontre apr\xE8s une p\xE9riode \xE0
+    l'\xE9tranger. Elle cherche un poste sur le secteur. Tr\xE8s flexible elle a
+    une ma\xEEtrise globale du secteur de la comptabilit\xE9 car avant de partir
+    \"faire son tour du monde\" elle a travaill\xE9 comme comptable dans une PME
+    et poss\xE8de des comp\xE9tences transverses."
   Art: {fileID: 21300000, guid: a8509fa6466d824479817ca85777d73b, type: 3}
   HeadArt: {fileID: 21300000, guid: 087b83c57f3455c4a9d0c63e4e4142fa, type: 3}
   CandidateDeck:

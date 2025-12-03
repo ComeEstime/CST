@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_Sasha
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Sasha
+  Age: 27
+  Description: "Sasha a obtenu un bac+4 en comptabilit\xE9 avant de travailler comme
+    serveur, un poste qu\u2019il occupe depuis maintenant trois ans. Il voulait voyager
+    avant de s\u2019engager professionnellement. Aujourd\u2019hui, il souhaite se
+    stabiliser et a donc r\xE9pondu \xE0 votre annonce via son \xE9cole."
+  Art: {fileID: 21300000, guid: 326ca3259e119d545bc51c8c83a04509, type: 3}
+  HeadArt: {fileID: 21300000, guid: 663a357b06b54fe459844c4c3ace2dae, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: e1a71a6319907a84e9c52878a16ec2a4, type: 2}
+  - {fileID: 11400000, guid: 1c58e4f8a5f5b864fac436ca7c732003, type: 2}
+  - {fileID: 11400000, guid: cd44900ff468af74490bfebad8ad2776, type: 2}
+  - {fileID: 11400000, guid: 9eb259832ec1aa344a5936f548a3c566, type: 2}
+  - {fileID: 11400000, guid: 44d8d7527875c4c4b8ff6d29fab3da8f, type: 2}
+  - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
+  - {fileID: 11400000, guid: 269188a8d11a9e341a0459453892aafb, type: 2}
+  - {fileID: 11400000, guid: b19344157823e724a96f61ec24b1fc78, type: 2}
+  - {fileID: 11400000, guid: 4e93cd6dd0539474eaac556a4a614f6c, type: 2}
+  CandidatePlace: 04000000
+  HaveBeenSee: 0
+  NumberCardInCommun: 0

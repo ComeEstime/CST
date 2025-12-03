@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
   Name: Basile
   Age: 25
-  Description: "Ce candidat a valid\xE9 un bac +4 orient\xE9 vers la gestion financi\xE8re.
-    Il aime voyager. Il a r\xE9alis\xE9 ses deux derni\xE8res ann\xE9es en alternance
-    dans une soci\xE9t\xE9 internationale. "
+  Description: "Basile est plut\xF4t orient\xE9 vers la gestion financi\xE8re. Il
+    aime voyager. Il a r\xE9alis\xE9 ses deux derni\xE8res ann\xE9es en alternance
+    dans une soci\xE9t\xE9 internationale. Il souhaite rejoindre une structure qui
+    lui permettra d'appr\xE9hender \xE9galement la comptabilit\xE9."
   Art: {fileID: 21300000, guid: 221cb3526e1bba74595d618a59421147, type: 3}
   HeadArt: {fileID: 21300000, guid: 4b7b5a7125e1a2a449e460bf48267191, type: 3}
   CandidateDeck:

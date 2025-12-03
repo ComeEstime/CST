@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c3b77a208369a4783cafa2e354b2f6, type: 3}
+  m_Name: candidate_Elodie
+  m_EditorClassIdentifier: Assembly-CSharp::CandidateSO
+  Name: Elodie
+  Age: 36
+  Description: "Elodie travaille actuellement comme comptable dans une soci\xE9t\xE9
+    industrielle. Avant cela, elle venait de la grande distribution. Elle cherche
+    \xE0 changer de poste pour aller vers d'autres comp\xE9tences professionnelles."
+  Art: {fileID: 21300000, guid: 2445801f4f5040f4884579b573dc209b, type: 3}
+  HeadArt: {fileID: 21300000, guid: 2926cd1f8b026f24f8b61a9bffada871, type: 3}
+  CandidateDeck:
+  - {fileID: 11400000, guid: 6bad632a0ed4f0048b8b87184272af21, type: 2}
+  - {fileID: 11400000, guid: 73cdfa626ce8031479514a0866b974bf, type: 2}
+  - {fileID: 11400000, guid: c5884874c6454f747b8d943dfd9c3592, type: 2}
+  - {fileID: 11400000, guid: cd44900ff468af74490bfebad8ad2776, type: 2}
+  - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
+  - {fileID: 11400000, guid: 7c28ec84bf5502649a97f2f77fd73439, type: 2}
+  - {fileID: 11400000, guid: ca5a4c4b2501f484f845718ab6953db6, type: 2}
+  - {fileID: 11400000, guid: a5afbe1442a11164fbafe379b143c523, type: 2}
+  - {fileID: 11400000, guid: 4e93cd6dd0539474eaac556a4a614f6c, type: 2}
+  CandidatePlace: 03000000
+  HaveBeenSee: 0
+  NumberCardInCommun: 0

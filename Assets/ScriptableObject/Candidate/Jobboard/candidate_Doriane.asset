@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: "Doriane vient d'\xEAtre licenci\xE9e dans le cadre d'une proc\xE9dure
     de licenciement \xE9conomique. Elle n'est pas press\xE9e pour retrouver un emploi
     mais souhaite rejoindre une structure stable financi\xE8rement. Elle a pr\xE9c\xE9demment
-    fait toute sa carri\xE8re dans la structure qui a eu des difficult\xE9s financi\xE8res. "
+    fait toute sa carri\xE8re dans la structure qui a eu des difficult\xE9s financi\xE8res."
   Art: {fileID: 21300000, guid: 4a8d53d8270bf9446acd9def4c941992, type: 3}
   HeadArt: {fileID: 21300000, guid: 0345999eaae7fb3469f4e230a39f71c1, type: 3}
   CandidateDeck:
