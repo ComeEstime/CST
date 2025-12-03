@@ -12,6 +12,7 @@ namespace CardRH
 {
     public enum GamePhase
     {
+        MainMenu = 100,
         Intro = -1,
         DeckBuild = 0,
         ChoosePlace = 1,
@@ -25,6 +26,7 @@ namespace CardRH
         public GamePhase CurrentPhase = GamePhase.DeckBuild;
         
         [Header("Canvas")]
+        [SerializeField] private Canvas _canvasMainMenu;
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
         [SerializeField] private Canvas _canvasMeetCandidate;
@@ -68,6 +70,11 @@ namespace CardRH
             Instance = this;
         }
 
+        public void StartGame()
+        {
+            StartCoroutine(LoadCanvas(GamePhase.DeckBuild));
+        }
+        
         public void ValidDeck() 
         {
             List<CardView> tempCard = CardViewDeck.CardChoose;
