@@ -27,6 +27,7 @@ namespace CardRH
         
         [Header("Canvas")]
         [SerializeField] private Canvas _canvasMainMenu;
+        [SerializeField] private Canvas _canvasIntro;
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
         [SerializeField] private Canvas _canvasMeetCandidate;
@@ -71,6 +72,11 @@ namespace CardRH
         }
 
         public void StartGame()
+        {
+            StartCoroutine(LoadCanvas(GamePhase.Intro));
+        }
+
+        public void StartDeckChoice()
         {
             StartCoroutine(LoadCanvas(GamePhase.DeckBuild));
         }
@@ -252,6 +258,14 @@ namespace CardRH
             //Remove last canva
             switch (CurrentPhase)
             {
+                case GamePhase.MainMenu :
+                    _canvasMainMenu.gameObject.SetActive(false);
+                    break;
+                
+                case GamePhase.Intro :
+                    _canvasIntro.gameObject.SetActive(false);
+                    break;
+                
                 case GamePhase.DeckBuild :
                     _canvasDeckBuild.gameObject.SetActive(false);
                     break;
@@ -277,6 +291,14 @@ namespace CardRH
             //Display new Canva
             switch (newPhase)
             {
+                case GamePhase.MainMenu :
+                    _canvasMainMenu.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.Intro :
+                    _canvasIntro.gameObject.SetActive(true);
+                    break;
+                
                 case GamePhase.DeckBuild :
                     _canvasDeckBuild.gameObject.SetActive(true);
                     break;

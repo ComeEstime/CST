@@ -1,0 +1,14 @@
+{
+  "infos": [
+      { "idPhase": 0, "text": "Bonjour, et bienvenue dans nos nouveaux locaux. Pour entrer dans cette nouvelle dynamique, nous avons amélioré notre mode de recrutement. On va faire cela en plusieurs étapes, laissez-moi vous expliquer." },
+      { "idPhase": 0, "text": "Première étape : \n Lors de cette première étape, votre mission consiste à examiner attentivement l’ensemble des cartes proposées, elles correspondent à l’identification de votre besoin. Parmi celles-ci, vous devrez sélectionner les six cartes qui représentent le mieux vos besoins indispensables et cela sur 3 thèmes." },
+      { "idPhase": 0, "text": "- Les savoir-faire\n- Les savoir-être\n- Le contexte associé à votre poste et à vos choix stratégiques.\nComment choisir vos cartes ?" },
+      { "idPhase": 0, "text": "Chaque carte à plusieurs information :\n- Son type, représenté par sa couleur et écrit en bas de la carte\n- Son titre qui est utile pour catégoriser la carte\n- Sa description, l’information la plus importante car elle explique la carte" },
+      { "idPhase": 0, "text": "- Et enfin sa popularité, qui est le chiffre en bas à droite et qui représente combien de candidat on cette carte (plus le chiffre est bas plus la carte est rare)" },
+      { "idPhase": 0, "text": "Vous allez donc devoir parcrourir toutes les cartes disponibles dans chaque domaine, afin de bien comprendre ce que chacune représente. Puis, après avoir réfléchis à vos besoins essentiels, vous pourez sélectionner les six cartes qui illustrent au mieux ces besoins fondamentaux." },
+      { "idPhase": 0, "text": "Vous choisirez alors deux cartes par thème. Ces cartes resteront avec vous tout le long de l'aventure sans pouvoir être changé et serons visible à gauche de l'écran." },
+      { "idPhase": 0, "text": "Avant de commencer voici quelques conseils pour la sélection :\n· Ne vous précipitez pas : prenez le temps de réfléchir à ce qui est réellement indispensable pour vous\n· Évitez de vous baser uniquement sur ce qui vous plaît : concentrez-vous sur ce qui est nécessaire\nUne fois vos six cartes sélectionnées, vous pourrez passer à l’étape suivante du jeu." },
+      { "idPhase": 0, "text": "Vous pouvez commencer la première phase." },
+    { "idPhase": 1, "text": "Utilisez les cartes pour définir vos besoins." }
+  ]
+}   
