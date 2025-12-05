@@ -323,6 +323,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _timeUI: {fileID: 4138704991187211180, guid: 68b7057fe05c2634f9b0ca081102e9c7, type: 3}
   OnClick:
     m_PersistentCalls:
       m_Calls:

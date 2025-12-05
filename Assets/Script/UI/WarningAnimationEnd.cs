@@ -4,6 +4,7 @@ public class WarningAnimationEnd : MonoBehaviour
 {
     public void AnimationEnd()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

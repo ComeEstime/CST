@@ -19,6 +19,8 @@ namespace CardRH
         [SerializeField] private float hoverScale = 1.07f;
         [SerializeField] private float duration = 0.12f;
         [SerializeField] private AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+        [Header("UI")] [SerializeField] private GameObject _timeUI;
         
         [Header("Click")]
         public UnityEvent OnClick;
@@ -71,6 +73,20 @@ namespace CardRH
             else if (gm.CurrentPhase == GamePhase.DiscoverCandidate &
                      TryGetComponent<CardView>(out CardView v) & !v.cardData.InDeck)
             {
+                if (!GameManager.Instance.CanDisplayCard())
+                {
+                    Canvas parentCanvas = target.GetComponentInParent<Canvas>();
+
+                    if (parentCanvas == null)
+                    {
+                        Debug.LogError("Aucun Canvas trouvé dans les parents !");
+                        return;
+                    }
+
+                    Instantiate(_timeUI, parentCanvas.transform);
+
+                    return;
+                }
                 v.cardData.InDeck = true;
                 v.UpdateCardUI();
                 gm.RemoveTime(1);

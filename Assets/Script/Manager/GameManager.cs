@@ -354,6 +354,11 @@ namespace CardRH
         }
         
         //Time gestion
+        public bool CanDisplayCard()
+        {
+            return _timeRessource > 0;
+        }
+        
         public void AddTime(int timeAdded)
         {
             _timeRessource += timeAdded;

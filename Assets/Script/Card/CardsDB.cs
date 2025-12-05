@@ -146,7 +146,7 @@ namespace CardRH
                     if (_cardDeck[0].cardData.Type == CardType.Empty
                         || _cardDeck[1].cardData.Type == CardType.Empty)
                     {
-                        _warningAlert.SetActive(true);
+                        InstanciateWarningPanel();
                         return;
                     }
                     _listSkill.SetActive(false);
@@ -164,7 +164,7 @@ namespace CardRH
                     if (_cardDeck[2].cardData.Type == CardType.Empty 
                         || _cardDeck[3].cardData.Type == CardType.Empty)
                     {
-                        _warningAlert.SetActive(true);
+                        InstanciateWarningPanel();
                         return;
                     }
                     _listSoftSkill.SetActive(false);
@@ -182,7 +182,7 @@ namespace CardRH
                     if (_cardDeck[4].cardData.Type == CardType.Empty
                         || _cardDeck[5].cardData.Type == CardType.Empty)
                     {
-                        _warningAlert.SetActive(true);
+                        InstanciateWarningPanel();
                         return;
                     }
                     _textMesh.text = "Voici tes cartes de recherche, est-ce qu'elles te conviennent ?";
@@ -197,6 +197,19 @@ namespace CardRH
                 default:
                     break;
             }
+        }
+
+        public void InstanciateWarningPanel()
+        {
+            Canvas parentCanvas = gameObject.GetComponentInParent<Canvas>();
+
+            if (parentCanvas == null)
+            {
+                Debug.LogError("Aucun Canvas trouvé dans les parents !");
+                return;
+            }
+
+            Instantiate(_warningAlert, parentCanvas.transform);
         }
     }
 }
