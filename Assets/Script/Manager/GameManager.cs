@@ -147,9 +147,15 @@ namespace CardRH
         
         public void StayPlace()
         {
+            Debug.Log(_candidateScript.FinishWithCandidate().Name + " à " + _candidateScript.FinishWithCandidate().NumberCardInCommun + " cartes");
+            
             //Finish and save the candidate
             CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
-            if (oldCandidate != null) SaveCandidate(oldCandidate);
+            if (oldCandidate != null)            
+            {
+                SaveCandidate(oldCandidate);
+                Debug.Log(oldCandidate.Name + " à " + oldCandidate.NumberCardInCommun + " cartes");
+            }
             _candidateScript.SetCandidateNull();
             
             EnterPlace(_currentPlace);
@@ -157,9 +163,15 @@ namespace CardRH
 
         public void LeavePlace()
         {
+            
             //Finish and save the candidate
             CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
-            if (oldCandidate != null) SaveCandidate(oldCandidate);
+            if (oldCandidate != null)
+            {
+                SaveCandidate(oldCandidate);
+                Debug.Log(oldCandidate.Name + " à " + oldCandidate.NumberCardInCommun + " cartes");
+            }
+            
             _candidateScript.SetCandidateNull();
             
             //Change Canvas
@@ -227,6 +239,7 @@ namespace CardRH
             {
                 if (_candidateList[i].Name == toSave.Name)
                 {
+                    /*
                     foreach (var card in toSave.CandidateDeck)
                     {
                         if (card.IsGolden && card.InDeck)
@@ -234,6 +247,7 @@ namespace CardRH
                             toSave.NumberCardInCommun++;
                         }
                     }
+                    */
                     toSave.HaveBeenSee = true;
                     _candidateList[i] = toSave;
                     return;

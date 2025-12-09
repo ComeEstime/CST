@@ -28,6 +28,7 @@ public class OfficePhase : MonoBehaviour, IPhaseInterface
         {
             if (candidate.HaveBeenSee)
             {
+                Debug.Log(candidate.Name + " à " + candidate.NumberCardInCommun + " cartes");
                 CandidateOfficeView instance = Instantiate(_candidatePrefab, _transformCandidat);
                 instance.DisplayCandidate(candidate);
             }

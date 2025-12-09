@@ -79,6 +79,7 @@ public class CandidateScript : MonoBehaviour
     {
         _currentCandidate.CandidateDeck.Clear();
         _currentCandidate.CandidateDeck = _deckScript.GetDeck();
+        _currentCandidate.NumberCardInCommun = _countNumberCard;
         return _currentCandidate;
     }
 
