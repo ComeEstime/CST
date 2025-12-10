@@ -147,14 +147,12 @@ namespace CardRH
         
         public void StayPlace()
         {
-            Debug.Log(_candidateScript.FinishWithCandidate().Name + " à " + _candidateScript.FinishWithCandidate().NumberCardInCommun + " cartes");
             
             //Finish and save the candidate
             CandidateSO oldCandidate = _candidateScript.FinishWithCandidate();
             if (oldCandidate != null)            
             {
                 SaveCandidate(oldCandidate);
-                Debug.Log(oldCandidate.Name + " à " + oldCandidate.NumberCardInCommun + " cartes");
             }
             _candidateScript.SetCandidateNull();
             
@@ -169,7 +167,6 @@ namespace CardRH
             if (oldCandidate != null)
             {
                 SaveCandidate(oldCandidate);
-                Debug.Log(oldCandidate.Name + " à " + oldCandidate.NumberCardInCommun + " cartes");
             }
             
             _candidateScript.SetCandidateNull();
