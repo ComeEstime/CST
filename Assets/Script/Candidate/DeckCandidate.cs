@@ -68,13 +68,16 @@ public class DeckCandidate : MonoBehaviour
 
     public void NewDeck()
     {
-        List<CardSO> temp = new List<CardSO>();
-        foreach (var VARIABLE in _deckCard)
+        foreach (var view in _deckCard)
         {
-            VARIABLE.GoldenCardEvent -= DisplayCardSame;
-            temp.Add(VARIABLE.cardData);
+            if (view != null)
+            {
+                view.GoldenCardEvent -= DisplayCardSame;
+                Destroy(view.gameObject);
+            }
         }
-        temp.Clear();
+
+        _deckCard.Clear();
     }
     
     public List<CardSO> GetDeck()

@@ -13,7 +13,7 @@ namespace CardRH
         public CardType Type = CardType.Skill;
         public Sprite Border;
         public Sprite Art;
-        public bool InDeck;
+        public bool InDeck = false;
         public bool IsGolden = false;
         public List<CardTrait> Traits = new List<CardTrait>();
         public List<PlaceType> Place = new List<PlaceType>();

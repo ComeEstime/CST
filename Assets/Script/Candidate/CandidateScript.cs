@@ -35,7 +35,7 @@ public class CandidateScript : MonoBehaviour
     {
         _countNumberCard = 0;
         ClearDeck();
-        _currentCandidate = newCandidate;
+        _currentCandidate = newCandidate.CreateClone();
         DisplayInfo();
         _deckScript.InitDeck(_currentCandidate.CandidateDeck);
     }

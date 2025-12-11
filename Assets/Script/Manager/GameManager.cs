@@ -271,8 +271,65 @@ namespace CardRH
                 GoToEnd(103);
                 return;
             }
+
+            int skillInt = 0;
+            int softSkillInt = 0;
+            int contextInt = 0;
+
+            foreach (var cardCandidate in finalCandidate.CandidateDeck)
+            {
+                bool counted = cardCandidate.InDeck && cardCandidate.IsGolden;
+
+                Debug.Log(
+                    $"[LOOP] {cardCandidate.Title} | InDeck={cardCandidate.InDeck} | IsGolden={cardCandidate.IsGolden} | Type={cardCandidate.Type} | Counted={counted}"
+                );
+
+                if (!counted)
+                    continue;
+
+                switch (cardCandidate.Type)
+                {
+                    case CardType.Skill:
+                        skillInt++;
+                        break;
+
+                    case CardType.SoftSkill:
+                        softSkillInt++;
+                        break;
+
+                    case CardType.Context:
+                        contextInt++;
+                        break;
+                }
+            }
+
+            int temp = skillInt + softSkillInt + contextInt;
+            Debug.Log($"[RESULT] temp={temp}, skill={skillInt}, soft={softSkillInt}, context={contextInt}");
+
+
+            if (temp != finalCandidate.NumberCardInCommun)
+            {
+                Debug.LogWarning($"Mismatch temp={temp}, NumberCardInCommun={finalCandidate.NumberCardInCommun}");
+
+                // Debug
+                foreach (var card in finalCandidate.CandidateDeck)
+                {
+                    Debug.Log($"Card {card.Title} | InDeck={card.InDeck} | IsGolden={card.IsGolden} | Type={card.Type}");
+                }
+            }
+
+            //Find good ending
+            if (skillInt == 2 && softSkillInt == 0 && contextInt == 2) { GoToEnd(101); return; }
+            if (skillInt == 0 && softSkillInt == 2 && contextInt == 2) { GoToEnd(102); return; }
+            if (skillInt == 2 && softSkillInt == 1 && contextInt == 1) { GoToEnd(104); return; }
+            if (skillInt == 1 && softSkillInt == 2 && contextInt == 1) { GoToEnd(105); return; }
+            if (skillInt == 2 && softSkillInt == 2 && contextInt == 1) { GoToEnd(107); return; }
+            if (skillInt == 2 && softSkillInt == 1 && contextInt == 2) { GoToEnd(108); return; }
+            if (skillInt == 1 && softSkillInt == 2 && contextInt == 2) { GoToEnd(109); return; }
+
             GoToEnd(101);
         }
+
 
         private void GoToEnd(int endInt)
         {

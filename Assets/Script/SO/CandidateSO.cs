@@ -24,7 +24,12 @@ public class CandidateSO : ScriptableObject
         clone.Description = Description;
         clone.Art = Art;
         clone.HeadArt = HeadArt;
-        clone.CandidateDeck = new List<CardSO>(CandidateDeck);
+        clone.CandidateDeck = new List<CardSO>();
+        
+        foreach (var card in CandidateDeck)
+        {
+            clone.CandidateDeck.Add(card.CreateClone());
+        }
         clone.CandidatePlace = new List<PlaceType>(CandidatePlace);
         clone.HaveBeenSee = HaveBeenSee;
         clone.NumberCardInCommun = NumberCardInCommun;
