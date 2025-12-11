@@ -28,7 +28,7 @@ public class PanelOfficeInfo : MonoBehaviour
 
     public void ValidCandidate()
     {
-        if(_candidateInfo != null) GameManager.Instance.SeeCandidate(_candidateInfo);
+        if(_candidateInfo != null) GameManager.Instance.FindEnd(_candidateInfo);
         Destroy(gameObject);
     }
     

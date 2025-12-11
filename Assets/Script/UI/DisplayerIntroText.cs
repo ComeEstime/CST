@@ -87,6 +87,9 @@ public class DisplayerIntroText : MonoBehaviour
             Debug.LogWarning($"JsonInfoSequence : aucune entrée trouvée pour idPhase = {phaseToPlay}.");
             _sequenceFinished = true;
         }
+        
+        _btnStartPhase.gameObject.SetActive(false);
+        DisplayCurrentEntry();
     }
 
 
@@ -193,7 +196,6 @@ public class DisplayerIntroText : MonoBehaviour
         _btnStartPhase.gameObject.SetActive(true);
     }
 
-    /// Optionnel : si tu veux changer de phase à la volée en code
     public void SetPhaseToPlay(int newPhase)
     {
         phaseToPlay = newPhase;

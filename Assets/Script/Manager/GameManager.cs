@@ -18,7 +18,8 @@ namespace CardRH
         ChoosePlace = 1,
         MeetCandidate = 2,
         DiscoverCandidate = 3,
-        ChooseCandidate = 4
+        ChooseCandidate = 4,
+        FinalPhase = 5
     }
     public class GameManager : MonoBehaviour
     {
@@ -27,13 +28,16 @@ namespace CardRH
         
         [Header("Canvas")]
         [SerializeField] private Canvas _canvasMainMenu;
-        [SerializeField] private Canvas _canvasIntro;
+        [SerializeField] private Canvas _canvasAvatar;
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
         [SerializeField] private Canvas _canvasMeetCandidate;
         [SerializeField] private Canvas _canvasCandidate;
         [SerializeField] private Canvas _canvasDeskop;
         [SerializeField] private MainHUD _HUDGame;
+
+        [Header("Dialogue Manager")] [SerializeField]
+        private DisplayerIntroText _displayDialogue;
         
         [Header("Sprite")]
         [SerializeField] private Sprite _imageSchool;
@@ -73,7 +77,10 @@ namespace CardRH
 
         public void StartGame()
         {
-            StartCoroutine(LoadCanvas(GamePhase.Intro));
+            StartCoroutine(LoadCanvas(GamePhase.Intro, after: () =>
+            {
+                _displayDialogue.SetPhaseToPlay(0);
+            }));
         }
 
         public void StartDeckChoice()
@@ -252,7 +259,28 @@ namespace CardRH
             }
         }
 
-        
+        public void FindEnd(CandidateSO finalCandidate)
+        {
+            if (finalCandidate.NumberCardInCommun <= 3)
+            {
+                GoToEnd(106);
+                return;
+            }
+            if (finalCandidate.NumberCardInCommun >= 6)
+            {
+                GoToEnd(103);
+                return;
+            }
+            GoToEnd(101);
+        }
+
+        private void GoToEnd(int endInt)
+        {
+            StartCoroutine(LoadCanvas(GamePhase.Intro, after: () =>
+            {
+                _displayDialogue.SetPhaseToPlay(endInt);
+            }));
+        }
         IEnumerator LoadCanvas(GamePhase newPhase, System.Action after = null)
         {
             _transition.SetTrigger("Start");
@@ -274,7 +302,7 @@ namespace CardRH
                     break;
                 
                 case GamePhase.Intro :
-                    _canvasIntro.gameObject.SetActive(false);
+                    _canvasAvatar.gameObject.SetActive(false);
                     break;
                 
                 case GamePhase.DeckBuild :
@@ -307,7 +335,7 @@ namespace CardRH
                     break;
                 
                 case GamePhase.Intro :
-                    _canvasIntro.gameObject.SetActive(true);
+                    _canvasAvatar.gameObject.SetActive(true);
                     break;
                 
                 case GamePhase.DeckBuild :

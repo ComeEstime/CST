@@ -9,6 +9,11 @@
       { "idPhase": 0, "text": "Vous choisirez alors deux cartes par thème. Ces cartes resteront avec vous tout le long de l'aventure sans pouvoir être changé et serons visible à gauche de l'écran." },
       { "idPhase": 0, "text": "Avant de commencer voici quelques conseils pour la sélection :\n· Ne vous précipitez pas : prenez le temps de réfléchir à ce qui est réellement indispensable pour vous\n· Évitez de vous baser uniquement sur ce qui vous plaît : concentrez-vous sur ce qui est nécessaire\nUne fois vos six cartes sélectionnées, vous pourrez passer à l’étape suivante du jeu." },
       { "idPhase": 0, "text": "Vous pouvez commencer la première phase." },
-    { "idPhase": 1, "text": "Utilisez les cartes pour définir vos besoins." }
+      { "idPhase": 101, "text": "Félicitations, vous avez trouvé le bon candidat !" },
+      { "idPhase": 101, "text": "Nous vous recommandons toutefois, durant les premiers temps de votre collaboration, de prévoir des moments formels d’échange. En effet, le savoir-être attendu de votre part ne correspond pas entièrement aux qualités naturelles de votre candidat. Assurez-vous de bien partager les mêmes valeurs !" }, 
+      { "idPhase": 103, "text": "Félicitation vous avez trouvez le candidat idéal !\nPrenez soin à présent de bien l’intégrer pour transformer votre essai." }, 
+      { "idPhase": 106, "text": "Vous prendriez trop de risques en choisissant ce candidat. Nous vous recommandons de réexaminer l’ensemble des CV reçus : d’autres candidats correspondront probablement mieux à vos besoins." }, 
+      { "idPhase": 106, "text": "Vous prendriez trop de risques en choisissant ce candidat. Nous vous recommandons de réexaminer l’ensemble des CV reçus : d’autres candidats correspondront probablement mieux à vos besoins." }, 
+      { "idPhase": 1, "text": "Utilisez les cartes pour définir vos besoins." }
   ]
 }   

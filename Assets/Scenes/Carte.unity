@@ -7086,7 +7086,7 @@ GameObject:
   - component: {fileID: 673285797}
   - component: {fileID: 673285796}
   m_Layer: 5
-  m_Name: CanvasIntro
+  m_Name: CanvasAvatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30218,13 +30218,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   CurrentPhase: 100
   _canvasMainMenu: {fileID: 2136315695}
-  _canvasIntro: {fileID: 673285798}
+  _canvasAvatar: {fileID: 673285798}
   _canvasDeckBuild: {fileID: 574147481}
   _canvasPlaceChoose: {fileID: 43681410}
   _canvasMeetCandidate: {fileID: 1068495544}
   _canvasCandidate: {fileID: 331823765}
   _canvasDeskop: {fileID: 807441656}
   _HUDGame: {fileID: 2129134679}
+  _displayDialogue: {fileID: 230756637}
   _imageSchool: {fileID: 21300000, guid: 5e7faba7f4f0fef4293777bbd21dab76, type: 3}
   _imageCooptation: {fileID: 21300000, guid: 777640d44c6cf7346a438a5699506f14, type: 3}
   _imageHall: {fileID: 21300000, guid: 3cc71c4909e878e4cafcdf2a3bf22f4d, type: 3}
