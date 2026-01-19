@@ -13,6 +13,7 @@ namespace CardRH
     public enum GamePhase
     {
         MainMenu = 100,
+        Credit = 101,
         Intro = -1,
         DeckBuild = 0,
         ChoosePlace = 1,
@@ -28,6 +29,7 @@ namespace CardRH
         
         [Header("Canvas")]
         [SerializeField] private Canvas _canvasMainMenu;
+        [SerializeField] private Canvas _canvasCredit;
         [SerializeField] private Canvas _canvasAvatar;
         [SerializeField] private Canvas _canvasDeckBuild;
         [SerializeField] private Canvas _canvasPlaceChoose;
@@ -82,11 +84,18 @@ namespace CardRH
                 _displayDialogue.SetPhaseToPlay(0);
             }));
         }
-
+        public void OpenCredit()
+        {
+            StartCoroutine(LoadCanvas(GamePhase.Credit));
+        }
+        public void OpenMainMenu()
+        {
+            StartCoroutine(LoadCanvas(GamePhase.MainMenu));
+        }
         public void StartDeckChoice()
         {
             StartCoroutine(LoadCanvas(GamePhase.DeckBuild));
-        }
+        }        
         
         public void ValidDeck() 
         {
@@ -358,6 +367,10 @@ namespace CardRH
                     _canvasMainMenu.gameObject.SetActive(false);
                     break;
                 
+                case GamePhase.Credit :
+                    _canvasCredit.gameObject.SetActive(false);
+                    break;
+                
                 case GamePhase.Intro :
                     _canvasAvatar.gameObject.SetActive(false);
                     break;
@@ -389,6 +402,10 @@ namespace CardRH
             {
                 case GamePhase.MainMenu :
                     _canvasMainMenu.gameObject.SetActive(true);
+                    break;
+                
+                case GamePhase.Credit :
+                    _canvasCredit.gameObject.SetActive(true);
                     break;
                 
                 case GamePhase.Intro :
