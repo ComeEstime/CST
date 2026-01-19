@@ -27,6 +27,7 @@ namespace CardRH
 
         private Vector3 baseScale;
         private Coroutine anim;
+        private CardView _cardView;
 
         private void Awake()
         {
@@ -36,6 +37,10 @@ namespace CardRH
         private void Start()
         {
             baseScale = target.localScale;
+            if (target.TryGetComponent(out CardView fd))
+            {
+                _cardView = fd;
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData) => StartAnim(baseScale * hoverScale);
@@ -44,6 +49,7 @@ namespace CardRH
 
         private void StartAnim(Vector3 to)
         {
+            if (!_cardView.cardData.Interactable) return;
             if (anim != null) StopCoroutine(anim);
             anim = StartCoroutine(AnimateScale(to));
         }
@@ -88,6 +94,8 @@ namespace CardRH
                     return;
                 }
                 v.cardData.InDeck = true;
+                StartAnim(baseScale);
+                v.cardData.Interactable = false; 
                 v.UpdateCardUI();
                 gm.RemoveTime(1);
             }

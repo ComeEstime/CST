@@ -16,7 +16,7 @@ namespace CardRH
         public bool InDeck = false;
         public bool IsGolden = false;
         public List<CardTrait> Traits = new List<CardTrait>();
-        public List<PlaceType> Place = new List<PlaceType>();
+        public bool Interactable = true;
 
         public CardSO CreateClone()
         {
@@ -30,6 +30,7 @@ namespace CardRH
             clone.InDeck = InDeck;
             clone.IsGolden = IsGolden;
             clone.Traits = new List<CardTrait>(Traits);
+            clone.Interactable = Interactable;
             return clone;
         }
     }
