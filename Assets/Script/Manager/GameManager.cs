@@ -55,6 +55,7 @@ namespace CardRH
         [Header("Candidate")] 
         [SerializeField] private List<CandidateSO> _candidateList;
         public List<CandidateSO> CandidateList { get => _candidateList; }
+        private List<CandidateSO> _initCandidate;
         [SerializeField] private MeetCandidateScript _meetCandidate;
         [SerializeField] private GameObject _meetDeck;
         [SerializeField] private CandidateScript _candidateScript;
@@ -75,6 +76,8 @@ namespace CardRH
         {
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
+
+            _initCandidate = new List<CandidateSO>(_candidateList);
         }
 
         public void StartGame()
@@ -487,6 +490,20 @@ namespace CardRH
         public void DisplayTime()
         {
             _textTime.text = _timeRessource.ToString();
+        }
+
+        public void RestartGame()
+        {
+            _cardDeck.Clear();
+            _cardDeck = new List<CardSO>();
+
+            _timeRessource = 50;
+
+            _candidateList.Clear();
+            _candidateList = new List<CandidateSO>(_initCandidate);
+
+            _HUDGame.gameObject.SetActive(false);
+            OpenMainMenu();
         }
     }
 }

@@ -25,6 +25,7 @@ public class DisplayerIntroText : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text _tmpText;
     [SerializeField] private Button _btnStartPhase;
+    [SerializeField] private Button _btnRestartGame;
 
     
     private InfoDatabase _database;
@@ -89,6 +90,7 @@ public class DisplayerIntroText : MonoBehaviour
         }
         
         _btnStartPhase.gameObject.SetActive(false);
+        _btnRestartGame.gameObject.SetActive(false);
         DisplayCurrentEntry();
     }
 
@@ -192,8 +194,14 @@ public class DisplayerIntroText : MonoBehaviour
 
     private void OnSequenceFinished()
     {
-        Debug.Log($"JsonInfoSequence : séquence terminée pour idPhase = {phaseToPlay}.");
-        _btnStartPhase.gameObject.SetActive(true);
+        if (phaseToPlay == 0)
+        {
+            _btnStartPhase.gameObject.SetActive(true);
+        }
+        else if (phaseToPlay >= 100)
+        {
+            _btnRestartGame.gameObject.SetActive(true);
+        }
     }
 
     public void SetPhaseToPlay(int newPhase)
