@@ -45,6 +45,8 @@ namespace CardRH
         [SerializeField] private Sprite _imageSchool;
         [SerializeField] private Sprite _imageCooptation;
         [SerializeField] private Sprite _imageHall;
+        [SerializeField] private Sprite _imageJobboard;
+        [SerializeField] private Sprite _imageAlternative;
         [SerializeField] private List<Image> _background;
         
         [Header("Deck Builder")]
@@ -108,8 +110,9 @@ namespace CardRH
                 if (!CardViewDeck.CardChoose[i].gameObject.activeSelf) return;
                 _cardDeck.Add(CardViewDeck.CardChoose[i].cardData);
             }
-            StartCoroutine(LoadCanvas(GamePhase.ChoosePlace, after: () =>
+            StartCoroutine(LoadCanvas(GamePhase.Intro, after: () =>
             { 
+                _displayDialogue.SetPhaseToPlay(1);
                 _HUDGame.gameObject.SetActive(true);
                 _HUDGame.SetCard(_cardDeck);
                 DisplayTime();
@@ -178,6 +181,14 @@ namespace CardRH
             EnterPlace(_currentPlace);
         }
 
+        public void GoToCity()
+        {
+            StartCoroutine(LoadCanvas(GamePhase.ChoosePlace, after: () =>
+            { 
+                _currentPlace = PlaceType.None;
+            }));
+        }
+        
         public void LeavePlace()
         {
             
@@ -465,6 +476,21 @@ namespace CardRH
                         bg.sprite = _imageHall;
                     }
                     break;
+                
+                case PlaceType.SocialNetwork :
+                    foreach (Image bg in _background)
+                    {
+                        bg.sprite = _imageJobboard;
+                    }
+                    break;
+                
+                case PlaceType.Alternative :
+                    foreach (Image bg in _background)
+                    {
+                        bg.sprite = _imageAlternative;
+                    }
+                    break;
+                
                     
             }
         }

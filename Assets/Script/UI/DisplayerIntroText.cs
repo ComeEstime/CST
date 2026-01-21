@@ -26,6 +26,7 @@ public class DisplayerIntroText : MonoBehaviour
     [SerializeField] private TMP_Text _tmpText;
     [SerializeField] private Button _btnStartPhase;
     [SerializeField] private Button _btnRestartGame;
+    [SerializeField] private Button _btnGoToCity;
 
     
     private InfoDatabase _database;
@@ -91,6 +92,7 @@ public class DisplayerIntroText : MonoBehaviour
         
         _btnStartPhase.gameObject.SetActive(false);
         _btnRestartGame.gameObject.SetActive(false);
+        _btnGoToCity.gameObject.SetActive(false);
         DisplayCurrentEntry();
     }
 
@@ -197,6 +199,10 @@ public class DisplayerIntroText : MonoBehaviour
         if (phaseToPlay == 0)
         {
             _btnStartPhase.gameObject.SetActive(true);
+        }
+        if (phaseToPlay == 1)
+        {
+            _btnGoToCity.gameObject.SetActive(true);
         }
         else if (phaseToPlay >= 100)
         {
