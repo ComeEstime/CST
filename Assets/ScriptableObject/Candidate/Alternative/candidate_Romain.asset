@@ -30,7 +30,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0510a06f15f487c44a9ca27df6214a09, type: 2}
   - {fileID: 11400000, guid: 7146d5f1e5e2a384ca758ff67a6dcdf3, type: 2}
   - {fileID: 11400000, guid: 390072aaed5508c47b908c4b015949cd, type: 2}
-  - {fileID: 11400000, guid: 810e3b3a018d7e641bcfb4533b2c329d, type: 2}
   - {fileID: 11400000, guid: 68d21f2a034928540a01f31578c5a72a, type: 2}
   CandidatePlace: 04000000
   HaveBeenSee: 0

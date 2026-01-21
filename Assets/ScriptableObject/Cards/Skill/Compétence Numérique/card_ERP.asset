@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: card_ERP
   m_EditorClassIdentifier: Assembly-CSharp::CardRH.CardSO
   Title: "Comp\xE9tences num\xE9riques"
-  Description: "Utilise le syst\xE8me de gestion - ERP de la soci\xE9t\xE9 qui recrute
-    (associ\xE9 au m\xE9tier)"
+  Description: "Utilise le syst\xE8me de gestion - ERP de la soci\xE9t\xE9 qui recrute"
   Cost: 12
   Type: 0
   Border: {fileID: 21300000, guid: 7fed6d71d7ac41a42aed3cd6ccfc4cb3, type: 3}
@@ -22,4 +21,4 @@ MonoBehaviour:
   InDeck: 0
   IsGolden: 0
   Traits: []
-  Place: 
+  Interactable: 1
